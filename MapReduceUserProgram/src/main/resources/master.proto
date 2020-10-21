@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_package = "generated";
+
+service StartMapReduceService{
+    rpc mapReduce(MapReduceInputParams)  returns (MapReduceResponse);
+}
+
+message MapReduceInputParams{
+       int32 mapperCount = 1 ;
+       int32 reducerCount = 2 ;
+       string masterIPAddress = 3;
+       int32 masterPort = 4;
+       string kVStoreIPAddress = 5;
+       int32 kvstorePort = 6;
+       string fileLocation = 7;
+       string reducerFunction =8;
+       string mapperFunction= 9;
+       string outputFile =10;
+}
+
+message MapReduceResponse{
+      Keys keys  = 1;
+      Message message  = 2;
+}
+
+message Keys {
+    repeated string key = 1;
+}
+
+message Empty{
+}
+
+message Message {
+    int32 responseCode = 1;
+    string responseMessage = 2;
+}

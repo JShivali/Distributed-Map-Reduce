@@ -1,0 +1,206 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 127536 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:389), pid=24016, tid=0x00000000000064f4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_221-b11) (build 1.8.0_221-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.221-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001eb4f000):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=25844, stack(0x000000001f620000,0x000000001f720000)]
+
+Stack: [0x000000001f620000,0x000000001f720000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   6420  306   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001eb62800 JavaThread "Service Thread" daemon [_thread_blocked, id=19300, stack(0x000000001f820000,0x000000001f920000)]
+  0x000000001eb55800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=17796, stack(0x000000001f720000,0x000000001f820000)]
+=>0x000000001eb4f000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=25844, stack(0x000000001f620000,0x000000001f720000)]
+  0x000000001eb4e000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=24064, stack(0x000000001f520000,0x000000001f620000)]
+  0x000000001eb4c000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=27244, stack(0x000000001f420000,0x000000001f520000)]
+  0x000000001eb48000 JavaThread "Attach Listener" daemon [_thread_blocked, id=23940, stack(0x000000001f320000,0x000000001f420000)]
+  0x000000001eb47000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=26572, stack(0x000000001f220000,0x000000001f320000)]
+  0x000000001eb41000 JavaThread "Finalizer" daemon [_thread_blocked, id=26944, stack(0x000000001f020000,0x000000001f120000)]
+  0x000000001eb40800 JavaThread "Reference Handler" daemon [_thread_blocked, id=27568, stack(0x000000001ef20000,0x000000001f020000)]
+  0x0000000003252800 JavaThread "main" [_thread_in_vm, id=23876, stack(0x0000000003150000,0x0000000003250000)]
+
+Other Threads:
+  0x000000001cd19000 VMThread [stack: 0x000000001ea20000,0x000000001eb20000] [id=17532]
+  0x000000001eb64800 WatcherThread [stack: 0x000000001f920000,0x000000001fa20000] [id=13932]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000014fd230] AdapterHandlerLibrary_lock - owner thread: 0x0000000003252800
+
+heap address: 0x00000006c2c00000, size: 4052 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 10420K [0x000000076b980000, 0x0000000770e00000, 0x00000007c0000000)
+  eden space 65024K, 16% used [0x000000076b980000,0x000000076c3ad260,0x000000076f900000)
+  from space 10752K, 0% used [0x0000000770380000,0x0000000770380000,0x0000000770e00000)
+  to   space 10752K, 0% used [0x000000076f900000,0x000000076f900000,0x0000000770380000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2c00000, 0x00000006cd580000, 0x000000076b980000)
+  object space 173568K, 0% used [0x00000006c2c00000,0x00000006c2c00000,0x00000006cd580000)
+ Metaspace       used 6529K, capacity 6640K, committed 6784K, reserved 1056768K
+  class space    used 815K, capacity 848K, committed 896K, reserved 1048576K
+
+Card table byte_map: [0x0000000012710000,0x0000000012f00000] byte_map_base: 0x000000000f0fa000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000758b5ce0
+ Begin Bits: [0x0000000013c50000, 0x0000000017ba0000)
+ End Bits:   [0x0000000017ba0000, 0x000000001baf0000)
+
+Polling page: 0x0000000001720000
+
+CodeCache: size=245760Kb used=1776Kb max_used=1776Kb free=243983Kb
+ bounds [0x0000000003350000, 0x00000000035c0000, 0x0000000012350000]
+ total_blobs=595 nmethods=305 adapters=203
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 6.408 Thread 0x000000001eb55800 nmethod 301 0x0000000003502010 code [0x00000000035021a0, 0x0000000003502588]
+Event: 6.408 Thread 0x000000001eb55800  302   !   3       java.util.zip.ZipFile$ZipFileInputStream::read (131 bytes)
+Event: 6.409 Thread 0x000000001eb55800 nmethod 302 0x000000000350aad0 code [0x000000000350aca0, 0x000000000350b548]
+Event: 6.409 Thread 0x000000001eb55800  303       3       java.util.zip.ZipFile::access$1300 (5 bytes)
+Event: 6.410 Thread 0x000000001eb55800 nmethod 303 0x000000000350ba90 code [0x000000000350bc00, 0x000000000350be68]
+Event: 6.410 Thread 0x000000001eb55800  304       3       java.util.zip.ZipFile::ensureOpenOrZipException (18 bytes)
+Event: 6.410 Thread 0x000000001eb55800 nmethod 304 0x000000000350bf90 code [0x000000000350c100, 0x000000000350c328]
+Event: 6.410 Thread 0x000000001eb55800  305       3       java.util.zip.ZipFile::access$1400 (14 bytes)
+Event: 6.410 Thread 0x000000001eb55800 nmethod 305 0x000000000350c410 code [0x000000000350c580, 0x000000000350c6e8]
+Event: 6.414 Thread 0x000000001eb4f000  306   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 5.612 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/LayoutCustomizer> (0x000000076c041028) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.614 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/PatternLayoutCustomizer> (0x000000076c051420) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.743 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/RollingFileAppenderBeanInfo> (0x000000076c05a390) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.743 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderBeanInfo> (0x000000076c05c618) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.743 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderBeanInfo> (0x000000076c05e8c0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.744 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonBeanInfo> (0x000000076c060bf8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.744 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonCustomizer> (0x000000076c062ed8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.748 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderCustomizer> (0x000000076c077458) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.751 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderCustomizer> (0x000000076c085d90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 5.754 Thread 0x0000000003252800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/RollingFileAppenderCustomizer> (0x000000076c094b60) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 6.414 loading class io/grpc/netty/shaded/io/netty/util/internal/PlatformDependent$Mpsc
+Event: 6.414 loading class io/grpc/netty/shaded/io/netty/util/internal/PlatformDependent$Mpsc done
+Event: 6.414 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscChunkedArrayQueue
+Event: 6.414 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscChunkedArrayQueue done
+Event: 6.415 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscChunkedArrayQueueColdProducerFields
+Event: 6.415 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscChunkedArrayQueueColdProducerFields done
+Event: 6.415 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueue
+Event: 6.415 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueue done
+Event: 6.416 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueueColdProducerFields
+Event: 6.416 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/BaseMpscLinkedArrayQueueColdProducerFields done
+
+
+Dynamic libraries:
+0x00007ff608d70000 - 0x00007ff608da7000 	C:\Program Files\Java\jdk1.8.0_221\bin\java.exe
+0x00007ff9c0980000 - 0x00007ff9c0b70000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9bfd00000 - 0x00007ff9bfdb2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9bd9b0000 - 0x00007ff9bdc55000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9c0700000 - 0x00007ff9c07a3000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9bfa10000 - 0x00007ff9bfaae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9c0290000 - 0x00007ff9c0327000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9bf730000 - 0x00007ff9bf850000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9bfb60000 - 0x00007ff9bfcf5000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9be860000 - 0x00007ff9be881000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9c0260000 - 0x00007ff9c0286000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9be890000 - 0x00007ff9bea26000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9bd910000 - 0x00007ff9bd9ae000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9be4b0000 - 0x00007ff9be5aa000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9a24f0000 - 0x00007ff9a2774000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9bfdc0000 - 0x00007ff9c00f5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9be3e0000 - 0x00007ff9be460000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9bef70000 - 0x00007ff9bef9e000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x0000000075940000 - 0x0000000075a12000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000075090000 - 0x0000000075935000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\verify.dll
+0x00007ff9bf720000 - 0x00007ff9bf728000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\java.dll
+0x00007ff998380000 - 0x00007ff998389000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\zip.dll
+0x00007ff9c08d0000 - 0x00007ff9c093f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9b4950000 - 0x00007ff9b4974000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9b2cd0000 - 0x00007ff9b2cda000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9b4920000 - 0x00007ff9b494d000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9be5b0000 - 0x00007ff9be5fa000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9b5b30000 - 0x00007ff9b5b3f000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff997d40000 - 0x00007ff997d69000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1082_none_9e8193e1e45b25c1\COMCTL32.dll
+0x00007ff99e0e0000 - 0x00007ff99e0f6000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\zip.dll
+0x00007ff9befa0000 - 0x00007ff9bf687000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff9bfab0000 - 0x00007ff9bfb59000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\server\jvm.dll
+0x00007ff9bdc60000 - 0x00007ff9be3e0000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9bd8e0000 - 0x00007ff9bd903000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9bd870000 - 0x00007ff9bd8ba000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ff9bd840000 - 0x00007ff9bd850000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff9bea30000 - 0x00007ff9bea82000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\java.dll
+0x00007ff9bd850000 - 0x00007ff9bd861000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\zip.dll
+0x00007ff9be460000 - 0x00007ff9be477000 	C:\WINDOWS\System32\KERNEL32.DLL
+
+VM Arguments:
+java_command: E:\MapRedCloud2\CloudComp2\out\artifacts\WordReducerProject_jar\WordReducerProject.jar R_3 6
+java_class_path (initial): E:\MapRedCloud2\CloudComp2\out\artifacts\WordReducerProject_jar\WordReducerProject.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_221
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Amazon\AWSCLI\bin\;C:\Program Files\Common Files\Tom Sawyer Software\10.0.0;C:\Users\jejur\anacondanew;C:\Users\jejur\anacondanew\Library\mingw-w64\bin;C:\Users\jejur\anacondanew\Library\usr\bin;C:\Users\jejur\anacondanew\Library\bin;C:\Users\jejur\anacondanew\Scripts;C:\Users\jejur\AppData\Local\Microsoft\WindowsApps;C:\Users\jejur\AppData\Roaming\npm;C:\Users\jejur\AppData\Local\GitHubDesktop\bin;C:\Users\jejur\AppData\Local\Programs\Microsoft VS Code\bin;E:\ZooKeeper\zookeeper-3.4.14\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Users\jejur\AppData\Local\Box\Box Edit\;E:\apache-maven-3.6.3\bin;
+USERNAME=jejur
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1082)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 11, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16594356k(6035592k free), swap 39111984k(62960k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.221-b11) for windows-amd64 JRE (1.8.0_221-b11), built on Jul  4 2019 04:39:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Oct 11 14:27:16 2020
+timezone: US Eastern Daylight Time
+elapsed time: 6 seconds (0d 0h 0m 6s)
+

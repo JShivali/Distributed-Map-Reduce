@@ -1,0 +1,361 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000752a4d07, pid=16924, tid=0x000000000000582c
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_221-b11) (build 1.8.0_221-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.221-b11 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x214d07]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000003162800):  JavaThread "main" [_thread_in_vm, id=22572, stack(0x0000000003050000,0x0000000003150000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x0000000003133c60
+
+Registers:
+RAX=0x0000000003133c60, RBX=0x0000000000000007, RCX=0x0000000000006000, RDX=0x000000000000005a
+RSP=0x0000000003139c60, RBP=0x0000000000000000, RSI=0x0000000003139c60, RDI=0x0000000000000007
+R8 =0x000000000000005a, R9 =0x0000000003157eb0, R10=0x000000001c2546c0, R11=0x000000000305a160
+R12=0x0000000003157eb0, R13=0x0000000003162800, R14=0x0000000003139d28, R15=0x000000001c2546c0
+RIP=0x00000000752a4d07, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000000003139c60)
+0x0000000003139c60:   ffffffff00000000 00000007c0002368
+0x0000000003139c70:   0000000003162800 0000000003157eb0
+0x0000000003139c80:   00000000ffffffff 00000000752a5c37
+0x0000000003139c90:   0000000003139d90 000000001c2546c0
+0x0000000003139ca0:   0000000003162800 0000000075151013
+0x0000000003139cb0:   0000000003139cf0 0000000003162800
+0x0000000003139cc0:   0000000003139d80 0000000003162800
+0x0000000003139cd0:   000000001c2546c0 0000000003162800
+0x0000000003139ce0:   00000000032a6c60 0000000003162800
+0x0000000003139cf0:   000000001c2546c0 0000000003162800
+0x0000000003139d00:   000000001c2546c0 0000000003162800
+0x0000000003139d10:   0000000000000001 000000001c2546c0
+0x0000000003139d20:   0000000003162800 000000001ecbab80
+0x0000000003139d30:   0000000003162800 000000007515277d
+0x0000000003139d40:   000000000313a0c0 00000007c0002368
+0x0000000003139d50:   00000007c000f958 00000000752a8435 
+
+Instructions: (pc=0x00000000752a4d07)
+0x00000000752a4ce7:   48 89 6c 24 30 33 ed 66 90 e8 2b 5e 08 00 ff c3
+0x00000000752a4cf7:   48 63 c8 48 8b c6 48 0f af cf 48 ff c7 48 2b c1
+0x00000000752a4d07:   89 28 48 63 c3 48 3b 05 95 ab 59 00 7e db 48 8b
+0x00000000752a4d17:   6c 24 30 48 8b 5c 24 38 48 8b 74 24 40 48 83 c4 
+
+
+Register to memory mapping:
+
+RAX=0x0000000003133c60 is pointing into the stack for thread: 0x0000000003162800
+RBX=0x0000000000000007 is an unknown value
+RCX=0x0000000000006000 is an unknown value
+RDX=0x000000000000005a is an unknown value
+RSP=0x0000000003139c60 is pointing into the stack for thread: 0x0000000003162800
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000003139c60 is pointing into the stack for thread: 0x0000000003162800
+RDI=0x0000000000000007 is an unknown value
+R8 =0x000000000000005a is an unknown value
+R9 =0x0000000003157eb0 is an unknown value
+R10={method} {0x000000001c2546c8} 'loadClass' '(Ljava/lang/String;)Ljava/lang/Class;' in 'java/lang/ClassLoader'
+R11=0x000000000305a160 is pointing into the stack for thread: 0x0000000003162800
+R12=0x0000000003157eb0 is an unknown value
+R13=0x0000000003162800 is a thread
+R14=0x0000000003139d28 is pointing into the stack for thread: 0x0000000003162800
+R15={method} {0x000000001c2546c8} 'loadClass' '(Ljava/lang/String;)Ljava/lang/Class;' in 'java/lang/ClassLoader'
+
+
+Stack: [0x0000000003050000,0x0000000003150000],  sp=0x0000000003139c60,  free space=935k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+27
+J 302 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x000000000341340c [0x0000000003411880+0x1b8c]
+J 205 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033dc244 [0x00000000033dbf60+0x2e4]
+J 204 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00000000033dbbcc [0x00000000033dbb40+0x8c]
+v  ~StubRoutines::call_stub
+J 153  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000033b8ce6 [0x00000000033b8c80+0x66]
+J 202 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00000000033da8d4 [0x00000000033da740+0x194]
+J 130 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00000000033a9af4 [0x00000000033a9180+0x974]
+J 191 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00000000033d2ecc [0x00000000033d2500+0x9cc]
+J 189 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00000000033cfdcc [0x00000000033cfcc0+0x10c]
+v  ~StubRoutines::call_stub
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.newTaskQueue(I)Ljava/util/Queue;+6
+j  io.grpc.netty.shaded.io.netty.util.concurrent.SingleThreadEventExecutor.<init>(Lio/grpc/netty/shaded/io/netty/util/concurrent/EventExecutorGroup;Ljava/util/concurrent/Executor;ZILio/grpc/netty/shaded/io/netty/util/concurrent/RejectedExecutionHandler;)V+82
+j  io.grpc.netty.shaded.io.netty.channel.SingleThreadEventLoop.<init>(Lio/grpc/netty/shaded/io/netty/channel/EventLoopGroup;Ljava/util/concurrent/Executor;ZILio/grpc/netty/shaded/io/netty/util/concurrent/RejectedExecutionHandler;)V+8
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoop.<init>(Lio/grpc/netty/shaded/io/netty/channel/nio/NioEventLoopGroup;Ljava/util/concurrent/Executor;Ljava/nio/channels/spi/SelectorProvider;Lio/grpc/netty/shaded/io/netty/channel/SelectStrategy;Lio/grpc/netty/shaded/io/netty/util/concurrent/RejectedExecutionHandler;)V+9
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup.newChild(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lio/grpc/netty/shaded/io/netty/channel/EventLoop;+29
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup.newChild(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Lio/grpc/netty/shaded/io/netty/util/concurrent/EventExecutor;+3
+j  io.grpc.netty.shaded.io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(ILjava/util/concurrent/Executor;Lio/grpc/netty/shaded/io/netty/util/concurrent/EventExecutorChooserFactory;[Ljava/lang/Object;)V+103
+j  io.grpc.netty.shaded.io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(ILjava/util/concurrent/Executor;[Ljava/lang/Object;)V+7
+j  io.grpc.netty.shaded.io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(ILjava/util/concurrent/ThreadFactory;[Ljava/lang/Object;)V+19
+j  io.grpc.netty.shaded.io.netty.channel.MultithreadEventLoopGroup.<init>(ILjava/util/concurrent/ThreadFactory;[Ljava/lang/Object;)V+14
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup.<init>(ILjava/util/concurrent/ThreadFactory;Ljava/nio/channels/spi/SelectorProvider;Lio/grpc/netty/shaded/io/netty/channel/SelectStrategyFactory;)V+22
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup.<init>(ILjava/util/concurrent/ThreadFactory;Ljava/nio/channels/spi/SelectorProvider;)V+7
+j  io.grpc.netty.shaded.io.netty.channel.nio.NioEventLoopGroup.<init>(ILjava/util/concurrent/ThreadFactory;)V+6
+j  io.grpc.netty.shaded.io.grpc.netty.Utils$DefaultEventLoopGroupResource.create()Lio/grpc/netty/shaded/io/netty/channel/EventLoopGroup;+44
+j  io.grpc.netty.shaded.io.grpc.netty.Utils$DefaultEventLoopGroupResource.create()Ljava/lang/Object;+1
+j  io.grpc.internal.SharedResourceHolder.getInternal(Lio/grpc/internal/SharedResourceHolder$Resource;)Ljava/lang/Object;+21
+j  io.grpc.internal.SharedResourceHolder.get(Lio/grpc/internal/SharedResourceHolder$Resource;)Ljava/lang/Object;+4
+j  io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder$NettyTransportFactory.<init>(Lio/grpc/netty/shaded/io/grpc/netty/NettyChannelBuilder$TransportCreationParamsFilterFactory;Ljava/lang/Class;Ljava/util/Map;Lio/grpc/netty/shaded/io/grpc/netty/NegotiationType;Lio/grpc/netty/shaded/io/netty/handler/ssl/SslContext;Lio/grpc/netty/shaded/io/netty/channel/EventLoopGroup;IIIJJZLio/grpc/internal/TransportTracer;)V+124
+j  io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder.buildTransportFactory()Lio/grpc/internal/ClientTransportFactory;+59
+j  io.grpc.internal.AbstractManagedChannelImplBuilder.build()Lio/grpc/ManagedChannel;+10
+j  WordCountReducer.main([Ljava/lang/String;)V+61
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001ea32800 JavaThread "Service Thread" daemon [_thread_blocked, id=25168, stack(0x000000001f6f0000,0x000000001f7f0000)]
+  0x000000001ea25800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=25164, stack(0x000000001f5f0000,0x000000001f6f0000)]
+  0x000000001ea1f000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=25160, stack(0x000000001f4f0000,0x000000001f5f0000)]
+  0x000000001ea1e000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=25156, stack(0x000000001f3f0000,0x000000001f4f0000)]
+  0x000000001ea1c000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=25152, stack(0x000000001f2f0000,0x000000001f3f0000)]
+  0x000000001ea18000 JavaThread "Attach Listener" daemon [_thread_blocked, id=25148, stack(0x000000001f1f0000,0x000000001f2f0000)]
+  0x000000001ea17000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=25144, stack(0x000000001f0f0000,0x000000001f1f0000)]
+  0x000000001ea11800 JavaThread "Finalizer" daemon [_thread_blocked, id=24456, stack(0x000000001eef0000,0x000000001eff0000)]
+  0x000000001ea10800 JavaThread "Reference Handler" daemon [_thread_blocked, id=24548, stack(0x000000001edf0000,0x000000001eef0000)]
+=>0x0000000003162800 JavaThread "main" [_thread_in_vm, id=22572, stack(0x0000000003050000,0x0000000003150000)]
+
+Other Threads:
+  0x000000001cc29000 VMThread [stack: 0x000000001e8f0000,0x000000001e9f0000] [id=23508]
+  0x000000001ea33800 WatcherThread [stack: 0x000000001f7f0000,0x000000001f8f0000] [id=25240]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c2c00000, size: 4052 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 9118K [0x000000076b980000, 0x0000000770e00000, 0x00000007c0000000)
+  eden space 65024K, 14% used [0x000000076b980000,0x000000076c2679e8,0x000000076f900000)
+  from space 10752K, 0% used [0x0000000770380000,0x0000000770380000,0x0000000770e00000)
+  to   space 10752K, 0% used [0x000000076f900000,0x000000076f900000,0x0000000770380000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2c00000, 0x00000006cd580000, 0x000000076b980000)
+  object space 173568K, 0% used [0x00000006c2c00000,0x00000006c2c00000,0x00000006cd580000)
+ Metaspace       used 6276K, capacity 6384K, committed 6528K, reserved 1056768K
+  class space    used 771K, capacity 784K, committed 896K, reserved 1048576K
+
+Card table byte_map: [0x0000000012620000,0x0000000012e10000] byte_map_base: 0x000000000f00a000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000758b5ce0
+ Begin Bits: [0x0000000013b60000, 0x0000000017ab0000)
+ End Bits:   [0x0000000017ab0000, 0x000000001ba00000)
+
+Polling page: 0x0000000001700000
+
+CodeCache: size=245760Kb used=1743Kb max_used=1756Kb free=244016Kb
+ bounds [0x0000000003260000, 0x00000000034d0000, 0x0000000012260000]
+ total_blobs=591 nmethods=306 adapters=198
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 6.614 Thread 0x000000001ea1c000 nmethod 300 0x000000000340c250 code [0x000000000340c3a0, 0x000000000340c618]
+Event: 6.614 Thread 0x000000001ea25800  302       3       java.net.URLClassLoader::defineClass (142 bytes)
+Event: 6.616 Thread 0x000000001ea25800 nmethod 302 0x0000000003411510 code [0x0000000003411880, 0x0000000003413b78]
+Event: 6.632 Thread 0x000000001ea25800  303       3       sun.net.util.IPAddressUtil::checkHostString (53 bytes)
+Event: 6.633 Thread 0x000000001ea25800 nmethod 303 0x0000000003410450 code [0x0000000003410660, 0x00000000034110b8]
+Event: 6.633 Thread 0x000000001ea25800  304       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+Event: 6.634 Thread 0x000000001ea25800 nmethod 304 0x000000000340f510 code [0x000000000340f6e0, 0x000000000340ff08]
+Event: 6.638 Thread 0x000000001ea1f000  305  s    4       sun.misc.URLClassPath::getNextLoader (88 bytes)
+Event: 6.639 Thread 0x000000001ea1c000  306  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)
+Event: 6.639 Thread 0x000000001ea1e000  307       4       sun.nio.cs.UTF_8$Encoder::encode (359 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 6.236 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/LayoutCustomizer> (0x000000076c041028) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.238 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/PatternLayoutCustomizer> (0x000000076c051420) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.240 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/RollingFileAppenderBeanInfo> (0x000000076c05a390) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.240 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderBeanInfo> (0x000000076c05c618) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.240 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderBeanInfo> (0x000000076c05e8c0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.240 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonBeanInfo> (0x000000076c060bf8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.241 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/AppenderSkeletonCustomizer> (0x000000076c062ed8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.243 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/WriterAppenderCustomizer> (0x000000076c077458) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.355 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/FileAppenderCustomizer> (0x000000076c085d90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 6.371 Thread 0x0000000003162800 Exception <a 'java/lang/ClassNotFoundException': org/apache/log4j/RollingFileAppenderCustomizer> (0x000000076c094b60) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 6.640 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL2Pad
+Event: 6.640 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL2Pad done
+Event: 6.640 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerLimitField
+Event: 6.640 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerLimitField done
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueMidPad
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueMidPad done
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerIndexField
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerIndexField done
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL1Pad
+Event: 6.641 loading class io/grpc/netty/shaded/io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL1Pad done
+
+
+Dynamic libraries:
+0x00007ff608d70000 - 0x00007ff608da7000 	C:\Program Files\Java\jdk1.8.0_221\bin\java.exe
+0x00007ff9c0980000 - 0x00007ff9c0b70000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9bfd00000 - 0x00007ff9bfdb2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9bd9b0000 - 0x00007ff9bdc55000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9c0700000 - 0x00007ff9c07a3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9bfa10000 - 0x00007ff9bfaae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9c0290000 - 0x00007ff9c0327000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9bf730000 - 0x00007ff9bf850000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9bfb60000 - 0x00007ff9bfcf5000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9be860000 - 0x00007ff9be881000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9c0260000 - 0x00007ff9c0286000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9be890000 - 0x00007ff9bea26000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9bd910000 - 0x00007ff9bd9ae000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9be4b0000 - 0x00007ff9be5aa000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9a24f0000 - 0x00007ff9a2774000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1082_none_9e8193e1e45b25c1\COMCTL32.dll
+0x00007ff9bfdc0000 - 0x00007ff9c00f5000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9be3e0000 - 0x00007ff9be460000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff9bef70000 - 0x00007ff9bef9e000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000075940000 - 0x0000000075a12000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\msvcr100.dll
+0x0000000075090000 - 0x0000000075935000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\server\jvm.dll
+0x00007ff9bf720000 - 0x00007ff9bf728000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff998380000 - 0x00007ff998389000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff9c08d0000 - 0x00007ff9c093f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9b4950000 - 0x00007ff9b4974000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9b2cd0000 - 0x00007ff9b2cda000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9b4920000 - 0x00007ff9b494d000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ff9be5b0000 - 0x00007ff9be5fa000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff9b5b30000 - 0x00007ff9b5b3f000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\verify.dll
+0x00007ff997d40000 - 0x00007ff997d69000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\java.dll
+0x00007ff99e0e0000 - 0x00007ff99e0f6000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\zip.dll
+0x00007ff9befa0000 - 0x00007ff9bf687000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff9bfab0000 - 0x00007ff9bfb59000 	C:\WINDOWS\System32\shcore.dll
+0x00007ff9bdc60000 - 0x00007ff9be3e0000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ff9bd8e0000 - 0x00007ff9bd903000 	C:\WINDOWS\System32\profapi.dll
+0x00007ff9bd870000 - 0x00007ff9bd8ba000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ff9bd840000 - 0x00007ff9bd850000 	C:\WINDOWS\System32\UMPDC.dll
+0x00007ff9bea30000 - 0x00007ff9bea82000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff9bd850000 - 0x00007ff9bd861000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ff9be460000 - 0x00007ff9be477000 	C:\WINDOWS\System32\cryptsp.dll
+
+VM Arguments:
+java_command: E:\MapRedCloud2\CloudComp2\out\artifacts\WordReducerProject_jar\WordReducerProject.jar R_4 6
+java_class_path (initial): E:\MapRedCloud2\CloudComp2\out\artifacts\WordReducerProject_jar\WordReducerProject.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_221
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Amazon\AWSCLI\bin\;C:\Program Files\Common Files\Tom Sawyer Software\10.0.0;C:\Users\jejur\anacondanew;C:\Users\jejur\anacondanew\Library\mingw-w64\bin;C:\Users\jejur\anacondanew\Library\usr\bin;C:\Users\jejur\anacondanew\Library\bin;C:\Users\jejur\anacondanew\Scripts;C:\Users\jejur\AppData\Local\Microsoft\WindowsApps;C:\Users\jejur\AppData\Roaming\npm;C:\Users\jejur\AppData\Local\GitHubDesktop\bin;C:\Users\jejur\AppData\Local\Programs\Microsoft VS Code\bin;E:\ZooKeeper\zookeeper-3.4.14\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Users\jejur\AppData\Local\Box\Box Edit\;E:\apache-maven-3.6.3\bin;
+USERNAME=jejur
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.1082)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 11, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16594356k(5934480k free), swap 39111984k(5840k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.221-b11) for windows-amd64 JRE (1.8.0_221-b11), built on Jul  4 2019 04:39:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Oct 11 14:26:03 2020
+timezone: US Eastern Daylight Time
+elapsed time: 6 seconds (0d 0h 0m 6s)
+

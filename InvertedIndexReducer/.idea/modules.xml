@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../InvertedIndexMapper/InvertedIndexMapper.iml" filepath="$PROJECT_DIR$/../InvertedIndexMapper/InvertedIndexMapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InvertedIndexReducer.iml" filepath="$PROJECT_DIR$/InvertedIndexReducer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../KVServerProject/KVServer.iml" filepath="$PROJECT_DIR$/../KVServerProject/KVServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MapReduceMaster/MapReduceMaster.iml" filepath="$PROJECT_DIR$/../MapReduceMaster/MapReduceMaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../MapReduceUserProgram/MapReduceUserProgram.iml" filepath="$PROJECT_DIR$/../MapReduceUserProgram/MapReduceUserProgram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Outputs/Outputs.iml" filepath="$PROJECT_DIR$/../Outputs/Outputs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Scripts/Scripts.iml" filepath="$PROJECT_DIR$/../Scripts/Scripts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WordMapperProject/WordMapperProject.iml" filepath="$PROJECT_DIR$/../WordMapperProject/WordMapperProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WordReducerProject/WordReducerProject.iml" filepath="$PROJECT_DIR$/../WordReducerProject/WordReducerProject.iml" />
+    </modules>
+  </component>
+</project>

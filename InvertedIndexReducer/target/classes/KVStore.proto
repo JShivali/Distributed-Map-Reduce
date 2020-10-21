@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_package = "generated";
+
+service KVStoreService{
+  rpc set(SetRequest)  returns (SetResponse);
+  rpc get(GetRequest)  returns (GetResponse);
+  rpc append(AppendRequest) returns (AppendResponse);
+}
+
+message SetRequest{
+  string key = 1;
+  int32 size = 2;
+  string value = 3;
+}
+
+message SetResponse{
+  string message  = 1;
+}
+
+
+message GetRequest{
+  string key = 1;
+}
+
+message GetResponse{
+  string value = 1;
+}
+
+
+message AppendRequest{
+  string key = 1;
+  string value = 2;
+}
+
+message AppendResponse{
+  string message=1;
+}
+

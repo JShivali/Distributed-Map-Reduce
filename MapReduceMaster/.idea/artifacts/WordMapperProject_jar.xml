@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WordMapperProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/WordMapperProject_jar</output-path>
+    <root id="archive" name="WordMapperProject.jar">
+      <element id="module-output" name="WordMapperProject" />
+    </root>
+  </artifact>
+</component>
