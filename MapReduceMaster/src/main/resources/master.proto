@@ -4,8 +4,6 @@ option java_package = "generated";
 
 service StartMapReduceService{
     rpc mapReduce(MapReduceInputParams)  returns (MapReduceResponse);
-
-
 }
 
 message MapReduceInputParams{

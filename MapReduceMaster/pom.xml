@@ -13,36 +13,46 @@
             <artifactId>protobuf-java</artifactId>
             <version>3.6.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.http-client</groupId>
-            <artifactId>google-http-client-jackson2</artifactId>
-            <version>1.37.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client -->
-        <dependency>
-            <groupId>com.google.oauth-client</groupId>
-            <artifactId>google-oauth-client</artifactId>
-            <version>1.31.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.http-client</groupId>-->
+<!--            <artifactId>google-http-client-jackson2</artifactId>-->
+<!--            <version>1.37.0</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.oauth-client</groupId>-->
+<!--            <artifactId>google-oauth-client</artifactId>-->
+<!--            <version>1.31.0</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.google.oauth-client</groupId>
-            <!--suppress MavenModelInspection -->
-            <artifactId>google-oauth-client-jetty</artifactId>
-            <!--suppress MavenModelInspection -->
-            <version>1.31.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.apis</groupId>
-            <artifactId>google-api-services-compute</artifactId>
-            <version>v1-rev20200901-1.30.10</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.oauth-client</groupId>-->
+<!--            &lt;!&ndash;suppress MavenModelInspection &ndash;&gt;-->
+<!--            <artifactId>google-oauth-client-jetty</artifactId>-->
+<!--            &lt;!&ndash;suppress MavenModelInspection &ndash;&gt;-->
+<!--            <version>1.31.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.apis</groupId>-->
+<!--            <artifactId>google-api-services-compute</artifactId>-->
+<!--            <version>v1-rev20200901-1.30.10</version>-->
+<!--        </dependency>-->
 
 
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.15.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.opencensus</groupId>
+                    <artifactId>opencensus-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-netty-shaded</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
@@ -64,6 +74,27 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.30</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.opencensus/opencensus-api -->
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-api</artifactId>
+            <!--suppress MavenModelInspection -->
+            <version>0.23.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.grpc/grpc-core -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-core</artifactId>
+            <version>1.25.0</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

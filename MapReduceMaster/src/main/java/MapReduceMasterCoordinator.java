@@ -1,8 +1,11 @@
+//import com.google.cloud.storage.BlobId;
+//import com.google.cloud.storage.BlobInfo;
+//import com.google.cloud.storage.Storage;
+//import com.google.cloud.storage.StorageOptions;
 import generated.KVStore;
 import generated.KVStoreServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import javafx.util.Pair;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -108,6 +111,12 @@ public class MapReduceMasterCoordinator {
         List<String> split=new ArrayList<>();
         for(String s[]:splits){
             writeToFile(Arrays.toString(s),fileLocation+"\\"+inputKeyAppender+fileName+"_"+count);
+            //write to gbucket
+//            try {
+//                uploadObject("cloud-map-reduce","cloud-map-red-bucket","Input/",fileLocation+"\\"+inputKeyAppender+fileName+"_"+count);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
             split.add(fileLocation+"\\"+inputKeyAppender+fileName+"_"+count);
             count++;
         }
@@ -176,5 +185,28 @@ public class MapReduceMasterCoordinator {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void uploadObject(
+            String projectId, String bucketName, String objectName, String filePath) throws IOException {
+        // The ID of your GCP project
+        // String projectId = "your-project-id";
+
+        // The ID of your GCS bucket
+        // String bucketName = "your-unique-bucket-name";
+
+        // The ID of your GCS object
+        // String objectName = "your-object-name";
+
+        // The path to your file to upload
+        // String filePath = "path/to/your/file"
+
+//        Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+//        BlobId blobId = BlobId.of(bucketName, objectName);
+//        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
+//        storage.create(blobInfo, Files.readAllBytes(Paths.get(filePath)));
+
+        System.out.println(
+                "File " + filePath + " uploaded to bucket " + bucketName + " as " + objectName);
     }
 }
