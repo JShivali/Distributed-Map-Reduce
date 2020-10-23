@@ -13,6 +13,25 @@ public class ConfigParams {
     String mapperFunction;
     String reducerFunction;
     String outputFile;
+    String masterVMName;
+
+    public String getMasterVMName() {
+        return masterVMName;
+    }
+
+    public void setMasterVMName(String masterVMName) {
+        this.masterVMName = masterVMName;
+    }
+
+    public String getKvstoreVMName() {
+        return kvstoreVMName;
+    }
+
+    public void setKvstoreVMName(String kvstoreVMName) {
+        this.kvstoreVMName = kvstoreVMName;
+    }
+
+    String kvstoreVMName;
 
     public String getOutputFile() {
         return outputFile;

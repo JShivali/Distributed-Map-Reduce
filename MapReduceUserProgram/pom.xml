@@ -8,11 +8,7 @@
     <artifactId>MapReduceUserProgram</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-        <dependency>
-            <groupId>com.google.apis</groupId>
-            <artifactId>google-api-services-content</artifactId>
-            <version>v2.1-rev20201015-1.30.10</version>
-        </dependency>
+
         <dependency>
             <!--suppress MavenModelInspection -->
             <groupId>com.google.auth</groupId>
@@ -22,13 +18,7 @@
             <version>0.22.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.apis</groupId>
-            <!--suppress MavenModelInspection -->
-            <artifactId>google-api-services-compute</artifactId>
-            <!--suppress MavenModelInspection -->
-            <version>v1-rev20200901-1.30.10</version>
-        </dependency>
+
 
         <dependency>
             <groupId>com.google.protobuf</groupId>
@@ -40,6 +30,16 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.15.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.opencensus</groupId>
+                    <artifactId>opencensus-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-netty-shaded</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
@@ -52,6 +52,27 @@
             <version>1.15.1</version>
         </dependency>
         <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-compute</artifactId>
+            <version>v1-rev214-1.25.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-storage</artifactId>
+            <version>1.31.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.opencensus</groupId>
+                    <artifactId>opencensus-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.30</version>
@@ -61,6 +82,13 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.30</version>
         </dependency>
+        <dependency>
+            <groupId>io.opencensus</groupId>
+            <artifactId>opencensus-api</artifactId>
+            <!--suppress MavenModelInspection -->
+            <version>0.23.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
         <dependency>
             <groupId>javax.annotation</groupId>

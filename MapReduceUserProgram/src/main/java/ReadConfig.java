@@ -32,6 +32,8 @@ public class ReadConfig {
             params.setMapperFunction(prop.getProperty("mapperFunction"));
             params.setReducerFunction(prop.getProperty("reducerFunction"));
             params.setOutputFile(prop.getProperty("outputFile"));
+            params.setMasterVMName(prop.getProperty("masterVMName"));
+            params.setKvstoreVMName(prop.getProperty("kvstoreVMName"));
 
         } catch (Exception e) {
             System.out.println("Exception: " + e);

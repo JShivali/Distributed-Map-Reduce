@@ -2,6 +2,7 @@ import generated.KVStore;
 import generated.Master;
 import generated.StartMapReduceServiceGrpc;
 import io.grpc.stub.StreamObserver;
+import org.apache.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,7 +27,7 @@ public class StartMRService extends StartMapReduceServiceGrpc.StartMapReduceServ
     private String reducerFunction;
     private String outputFile;
 
-
+    Logger log = Logger.getLogger(MasterInitiator.class);
     public StartMRService(){
 
     }
@@ -38,6 +39,7 @@ public class StartMRService extends StartMapReduceServiceGrpc.StartMapReduceServ
     @Override
     public void mapReduce(Master.MapReduceInputParams request, StreamObserver<Master.MapReduceResponse> responseObserver) {
         // get details from the request and call the MapReduceCoordinator AKA the master node
+        log.debug("**** START MAP REDUCE HIT *****");
         kVStoreIp= request.getKVStoreIPAddress();
         kVStorePort= request.getKvstorePort();
         fileLocation = request.getFileLocation();

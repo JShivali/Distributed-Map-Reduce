@@ -14,7 +14,7 @@ public class KVStoreService extends KVStoreServiceGrpc.KVStoreServiceImplBase {
     private String value;
     private int size;
     private ConcurrentMap<String,String> kvStoreMap;
-    private String path="KVStore.txt";
+    private String path="/usr/KVStore.txt";
     private boolean isDataSet=false;
     private String getData;
 
@@ -27,6 +27,8 @@ public class KVStoreService extends KVStoreServiceGrpc.KVStoreServiceImplBase {
         key =request.getKey();
         size= request.getSize();
         value=request.getValue();
+
+
 
         // store in map
         try {
@@ -172,7 +174,7 @@ public class KVStoreService extends KVStoreServiceGrpc.KVStoreServiceImplBase {
             BufferedReader br = new BufferedReader(new FileReader(file.getAbsoluteFile()));
             String line;
             while ((line = br.readLine()) != null) {
-                String[] splitInput = line.split("-");
+                String[] splitInput = line.split(":");
                 try {
                     kvStoreMap.put(splitInput[0], splitInput[1]);
                 } catch (Exception e) {
@@ -194,7 +196,7 @@ public class KVStoreService extends KVStoreServiceGrpc.KVStoreServiceImplBase {
             BufferedWriter finalBw = bw;
             kvStoreMap.forEach((k, v) -> {
                 try {
-                    bw.write(k + "-" + v + "\n");
+                    bw.write(k + ":" + v + "\n");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
