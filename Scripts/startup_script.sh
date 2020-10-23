@@ -13,32 +13,51 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 # [START startup_script]
+sudo touch /var/log/mylogs.log
+sudo chmod 777 /var/log/mylogs.log
 sudo apt update
-sudo mkdir /usr/app3
-sudo chmod 777 /usr/app3
-cd /usr/app
-rm -rf CloudMapReduce
-git clone https://github.iu.edu/sjejurka/CloudMapReduce.git
+echo "update from script complete" >> /var/log/mylogs.log
+sudo mkdir /usr/app6
+sudo chmod 777 /usr/app6
+cd /usr/app6
+echo "removing and cloning" >> /var/log/mylogs.log
+rm -rf Distributed-Map-Reduce
+git clone https://github.com/JShivali/Distributed-Map-Reduce.git
+echo "Clone complete" >> /var/log/mylogs.log
 # Use the metadata server to get the configuration specified during
 # instance creation. Read more about metadata here:
 # https://cloud.google.com/compute/docs/metadata#querying
 TEXT=$(curl http://metadata/computeMetadata/v1/instance/attributes/text -H "Metadata-Flavor: Google")
-CS_BUCKET=$(curl http://metadata/computeMetadata/v1/instance/attributes/bucket -H "Metadata-Flavor: Google")
 instancename=$(curl http://metadata/computeMetadata/v1/instance/name -H "Metadata-Flavor: Google")
+CS_BUCKET=$(curl http://metadata/computeMetadata/v1/instance/attributes/bucket -H "Metadata-Flavor: Google")
+echo "$instancename" >> /var/log/mylogs.log
 case "$instancename" in
-   "master-instance") java -jar /usr/app/CloudMapReduce/Outputs/MapReduceMaster.jar ;;
-   "kvstore-instance") java -jar /usr/app/CloudMapReduce/Outputs/MapReduceMaster.jar ;;
-   "userprog-instance") java -jar /usr/app/CloudMapReduce/Outputs/MapReduceMaster.jar ;;
-   "mapper-instance") java -jar /usr/app/CloudMapReduce/Outputs/MapReduceMaster.jar ;;
-   "reducer-instance") java -jar /usr/app/CloudMapReduce/Outputs/MapReduceMaster.jar ;;
+   "master-instance")
+   echo "Jar executed" >> /var/log/mylogs.log
+   sudo chmod 777 /var/log/masterlog.out
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar > /var/log/masterlog.out
+   ;;
+   "kvstore-instance")
+   echo "KV executed" >> /var/log/mylogs.log
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/KVServer.jar
+    ;;
+   "userprog-instance")
+   echo "UserProg executed executed" >> /var/log/mylogs.log
+   sudo chmod 777 /var/log/userproglog.out
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 5 5 /usr/app6/Distributed-Map-Reduce/Inputs/WordCountData /usr/app6/Distributed-Map-Reduce/Outputs/WordMapperProject.jar /usr/app6/Distributed-Map-Reduce/Outputs/WordReducerProject.jar /usr/app6/Distributed-Map-Reduce/Outputs
+# mappercount redcount inputloc mapperfnloc reducerfnloc outputloc
+   ;;
+   "mapper-instance") java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar ;;
+   "reducer-instance") java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar ;;
 esac
 # Create a Google Cloud Storage bucket.
-#gsutil mb gs://$CS_BUCKET
+gsutil mb gs://$CS_BUCKET
+gsutil cp /usr/app6/Distributed-Map-Reduce/Scripts/run_master.sh gs://$CS_BUCKET
+
 #
 ## Store the image in the Google Cloud Storage bucket and allow all users
 ## to read it.
 #gsutil cp -a public-read output.png gs://$CS_BUCKET/output.png
-
 # [END startup_script]
+
