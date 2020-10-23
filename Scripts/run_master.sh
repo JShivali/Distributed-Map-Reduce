@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # [START startup_script]
+sleep 10
 sudo touch /var/log/mylogs.log
 sudo chmod 777 /var/log/mylogs.log
 sudo apt update
