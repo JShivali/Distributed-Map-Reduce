@@ -31,11 +31,11 @@ echo "Clone complete" >> /var/log/mylogs.log
 TEXT=$(curl http://metadata/computeMetadata/v1/instance/attributes/text -H "Metadata-Flavor: Google")
 instancename=$(curl http://metadata/computeMetadata/v1/instance/name -H "Metadata-Flavor: Google")
 
-MAPPER_NAME=$(curl http://metadata/computeMetadata/v1/instance/attributes/mapperName -H "Metadata-Flavor: Google")
-KV_STORE_IP=$(curl http://metadata/computeMetadata/v1/instance/attributes/kvstoreip -H "Metadata-Flavor: Google")
-OUTPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/instance/attributes/outputFileLoc -H "Metadata-Flavor: Google")
-INPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/instance/attributes/inputFileLoc -H "Metadata-Flavor: Google")
-REDUCER_COUNT=$(curl http://metadata/computeMetadata/v1/instance/attributes/reducercount -H "Metadata-Flavor: Google")
+MAPPER_NAME=$(curl http://metadata/computeMetadata/v1/project/attributes/mapperName -H "Metadata-Flavor: Google")
+KV_STORE_IP=$(curl http://metadata/computeMetadata/v1/project/attributes/kvstoreip -H "Metadata-Flavor: Google")
+OUTPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/project/attributes/outputFileLoc -H "Metadata-Flavor: Google")
+INPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/project/attributes/inputFileLoc -H "Metadata-Flavor: Google")
+REDUCER_COUNT=$(curl http://metadata/computeMetadata/v1/project/attributes/reducercount -H "Metadata-Flavor: Google")
 
 echo "$instancename" >> /var/log/mylogs.log
 case "$instancename" in
