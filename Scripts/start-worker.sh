@@ -32,12 +32,9 @@ OUTPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/instance/attributes/ou
 INPUT_FILE_LOC=$(curl http://metadata/computeMetadata/v1/instance/attributes/inputFileLoc -H "Metadata-Flavor: Google")
 REDUCER_COUNT=$(curl http://metadata/computeMetadata/v1/instance/attributes/reducercount -H "Metadata-Flavor: Google")
 echo $MAPPER_FUNCTION, $instancename, $KV_STORE_IP, $OUTPUT_FILE_LOC, $INPUT_FILE_LOC, $REDUCER_COUNT >> /var/log/worker.log
+   
+java -jar $MAPPER_FUNCTION $instancename $KV_STORE_IP $OUTPUT_FILE_LOC $INPUT_FILE_LOC $REDUCER_COUNT > /var/log/worker.log
 
-case "$instancename" in
-   "mapper-instance")    
-   java -jar $MAPPER_FUNCTION $instancename $KV_STORE_IP $OUTPUT_FILE_LOC $INPUT_FILE_LOC $REDUCER_COUNT >> /var/log/worker.log ;;
-   "reducer-instance") java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar ;;
-esac
 # Create a Google Cloud Storage bucket.
 
 
