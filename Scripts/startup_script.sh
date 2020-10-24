@@ -17,17 +17,11 @@
 sudo touch /var/log/mylogs.log
 sudo chmod 777 /var/log/mylogs.log
 sudo apt update
-echo "update from script complete" >> /var/log/mylogs.log
 sudo mkdir /usr/app6
 sudo chmod 777 /usr/app6
 cd /usr/app6
-echo "removing and cloning" >> /var/log/mylogs.log
 rm -rf Distributed-Map-Reduce
 git clone https://github.com/JShivali/Distributed-Map-Reduce.git
-echo "Clone complete" >> /var/log/mylogs.log
-# Use the metadata server to get the configuration specified during
-# instance creation. Read more about metadata here:
-# https://cloud.google.com/compute/docs/metadata#querying
 TEXT=$(curl http://metadata/computeMetadata/v1/instance/attributes/text -H "Metadata-Flavor: Google")
 instancename=$(curl http://metadata/computeMetadata/v1/instance/name -H "Metadata-Flavor: Google")
 CS_BUCKET=$(curl http://metadata/computeMetadata/v1/instance/attributes/bucket -H "Metadata-Flavor: Google")
@@ -45,15 +39,13 @@ case "$instancename" in
    "userprog-instance")
    echo "UserProg executed executed" >> /var/log/mylogs.log
    sudo chmod 777 /var/log/userproglog.out
-   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 5 5 /usr/app6/Distributed-Map-Reduce/Inputs/WordCountData /usr/app6/Distributed-Map-Reduce/Outputs/WordMapperProject.jar /usr/app6/Distributed-Map-Reduce/Outputs/WordReducerProject.jar /usr/app6/Distributed-Map-Reduce/Outputs
-# mappercount redcount inputloc mapperfnloc reducerfnloc outputloc
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 2 2 /usr/app6/Distributed-Map-Reduce/Inputs/InvertedDataSet /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexMapper.jar /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexReducer.jar /usr/app6/Distributed-Map-Reduce/Outputs
+# jar_name, mapper_count,reducer_count, inputFileLocation (Mention the directory)
    ;;
-   "mapper-instance") java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar ;;
-   "reducer-instance") java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceMaster.jar ;;
 esac
 # Create a Google Cloud Storage bucket.
 gsutil mb gs://$CS_BUCKET
-gsutil cp /usr/app6/Distributed-Map-Reduce/Scripts/run_master.sh gs://$CS_BUCKET
+gsutil cp /usr/app6/Distributed-Map-Reduce/Scripts/start-worker.sh gs://$CS_BUCKET
 
 #
 ## Store the image in the Google Cloud Storage bucket and allow all users
