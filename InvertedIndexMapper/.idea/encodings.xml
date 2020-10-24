@@ -3,5 +3,17 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../InvertedIndexReducer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../InvertedIndexReducer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../KVServerProject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../KVServerProject/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../MapReduceMaster/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../MapReduceMaster/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../MapReduceUserProgram/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../MapReduceUserProgram/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WordMapperProject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WordMapperProject/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WordReducerProject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WordReducerProject/src/main/resources" charset="UTF-8" />
   </component>
 </project>

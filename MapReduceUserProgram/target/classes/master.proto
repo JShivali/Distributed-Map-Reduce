@@ -18,10 +18,9 @@ message MapReduceInputParams{
        string mapperFunction= 9;
        string outputFile =10;
 }
-
 message MapReduceResponse{
-      Keys keys  = 1;
-      Message message  = 2;
+  int32 responseCode = 1;
+  string responseMessage = 2;
 }
 
 message Keys {
@@ -31,7 +30,3 @@ message Keys {
 message Empty{
 }
 
-message Message {
-    int32 responseCode = 1;
-    string responseMessage = 2;
-}

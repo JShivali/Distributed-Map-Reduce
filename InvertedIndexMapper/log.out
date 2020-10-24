@@ -1,0 +1,146 @@
+Mapper for  M_3 started at : Wed Oct 21 20:57:06 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 20:57:06 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 20:57:06 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 20:57:06 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 21:23:45 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 21:23:45 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 21:23:45 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 21:23:45 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 21:30:41 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 21:30:41 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 21:30:41 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 21:30:41 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 21:43:14 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 21:43:14 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 21:43:15 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 21:43:15 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 21:43:15 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 21:43:15 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_2 finished at : Wed Oct 21 21:43:15 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 21:43:15 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_3 finished at : Wed Oct 21 21:43:15 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 21:43:15 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 21:45:02 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 21:45:02 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 21:45:02 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 21:45:02 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 22:49:45 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 22:49:45 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 22:49:46 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 22:49:46 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 22:49:46 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 22:49:46 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_2 finished at : Wed Oct 21 22:49:46 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_3 finished at : Wed Oct 21 22:49:46 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 22:49:46 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 22:49:46 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 22:51:26 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 22:51:26 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 22:51:26 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 22:51:26 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 22:56:49 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 22:56:50 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 22:56:50 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 22:56:50 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 22:56:50 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 22:56:50 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 22:56:50 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 22:56:50 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 22:56:50 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_3 finished at : Wed Oct 21 22:56:50 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_2 finished at : Wed Oct 21 22:56:50 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 22:58:16 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 22:58:16 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 22:58:17 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 22:58:17 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 22:58:17 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 22:58:17 EDT 2020
+The aggregated values are: [{}]
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 22:58:17 EDT 2020
+Reducer for val R_2 finished at : Wed Oct 21 22:58:17 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 22:58:17 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 23:02:38 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 23:02:38 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 23:02:38 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 23:02:38 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 23:02:38 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 23:02:38 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_2 finished at : Wed Oct 21 23:02:39 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_3 finished at : Wed Oct 21 23:02:39 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 23:02:39 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 23:02:39 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 23:19:56 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 23:19:56 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 23:19:56 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 23:19:56 EDT 2020
+Mapper for  M_2 started at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for  M_0 started at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for  M_3 started at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for M_2 finished at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for M_3 finished at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for M_0 finished at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for  M_1 started at : Wed Oct 21 23:21:08 EDT 2020
+Mapper for M_1 finished at : Wed Oct 21 23:21:08 EDT 2020
+Reducer  R_0 started at : Wed Oct 21 23:21:08 EDT 2020
+Reducer  R_2 started at : Wed Oct 21 23:21:08 EDT 2020
+Reducer  R_1 started at : Wed Oct 21 23:21:08 EDT 2020
+Reducer  R_3 started at : Wed Oct 21 23:21:08 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_0 finished at : Wed Oct 21 23:21:08 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_2 finished at : Wed Oct 21 23:21:08 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_1 finished at : Wed Oct 21 23:21:08 EDT 2020
+The aggregated values are: [{}]
+Reducer for val R_3 finished at : Wed Oct 21 23:21:09 EDT 2020
+Mapper for  M_1 started at : Thu Oct 22 01:22:39 EDT 2020
+Mapper for  M_3 started at : Thu Oct 22 01:22:39 EDT 2020
+Mapper for  M_0 started at : Thu Oct 22 01:22:39 EDT 2020
+Mapper for  M_2 started at : Thu Oct 22 01:22:39 EDT 2020

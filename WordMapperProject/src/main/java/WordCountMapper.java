@@ -1,6 +1,10 @@
 //
 //import com.google.api.client.http.HttpTransport;
 //import com.google.auth.oauth2.GoogleCredentials;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.services.compute.Compute;
+import com.google.api.services.compute.ComputeScopes;
 import generated.KVStore;
 import generated.KVStoreServiceGrpc;
 import io.grpc.ManagedChannel;
@@ -8,6 +12,7 @@ import io.grpc.ManagedChannelBuilder;
 import org.apache.log4j.Logger;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.sql.Blob;
@@ -20,11 +25,6 @@ public class WordCountMapper {
     private static final String intermediateKeyIdentifier = "intermediate_";
     private static final String reducerKeyIdentifier = "reducer-";
     static Logger log = Logger.getLogger(WordCountMapper.class);
-  //  private static HttpTransport httpTransport;
-
-    private static final String APPLICATION_NAME = "Mapper";
-
-
 
     public static void main(String[] args) {
 
@@ -40,6 +40,7 @@ public class WordCountMapper {
         KVStoreServiceGrpc.KVStoreServiceBlockingStub keyValueStoreBlockingStub =  KVStoreServiceGrpc.newBlockingStub(channel);
         String inputSplitsList= keyValueStoreBlockingStub.get(KVStore.GetRequest.newBuilder().setKey(mapperNo).build()).getValue();
         List<String> wordsList= new ArrayList<>();
+        keyValueStoreBlockingStub.set(KVStore.SetRequest.newBuilder().setKey(mapperNo+"_status").setValue("inprogress").build());
         // from the list of inputSplitsList, for each input get list of words and create aggregated list of strings
         log.debug("*********** ENTERED MAPPERS PROCESS IS SPLITING INPUTS  ************ "+wordsList);
         for(String inputSplit:inputSplitsList.split(",")){
@@ -98,7 +99,7 @@ public class WordCountMapper {
             keyValueStoreBlockingStub.append(KVStore.AppendRequest.newBuilder().setKey(reducerKeyIdentifier+reducerNo).setValue(intermediateKeyIdentifier+word.split("_")[1].trim()).build());
         }
 
-
+        keyValueStoreBlockingStub.set(KVStore.SetRequest.newBuilder().setKey(mapperNo+"_status").setValue("completed").build());
         log.debug("Mapper for "+ mapperNo +" finished at : "+ new Date());
         System.out.println("Mapper for "+ mapperNo +" finished at : "+ new Date());
         System.exit(0);

@@ -76,7 +76,7 @@ public class GCloudComputeOperations {
             Operation op;
             if (foundOurInstance) {
                 op = deleteInstance(compute, instanceName);
-                waitForOperationCompletion(compute, op);
+                //waitForOperationCompletion(compute, op);
             }
 
             op = startInstance(/*compute*/ metadata,instanceName);
@@ -168,15 +168,15 @@ public class GCloudComputeOperations {
         return insert.execute();
     }
 
-    public int deleteInstance() {
+    public int deleteInstance(String instanceNameToDelete) {
         try {
             Compute compute = createCompute();
             boolean foundOurInstance = checkForInstance(compute);
 
             Operation op;
             if (foundOurInstance) {
-                op = deleteInstance(compute, instanceName);
-                waitForOperationCompletion(compute, op);
+                op = deleteInstance(compute, instanceNameToDelete);
+                //waitForOperationCompletion(compute, op);
             }
             return 0;
         } catch (Throwable e) {
@@ -184,10 +184,11 @@ public class GCloudComputeOperations {
             return -1;
         }
     }
-    private static Operation deleteInstance(Compute compute, String instanceName) throws Exception {
-        log.debug("***** GCLOUDCOMPUTEOPERATIONS - deleteInstance() - {} ******"+instanceName);
+    private static Operation deleteInstance(Compute compute, String instanceToDelete) throws Exception {
+        log.debug("***** GCLOUDCOMPUTEOPERATIONS - deleteInstance() - {} ****** "+instanceToDelete);
         Compute.Instances.Delete delete =
-                compute.instances().delete(Constants.PROJECT_ID, Constants.ZONE_NAME, instanceName);
+                compute.instances().delete(Constants.PROJECT_ID, Constants.ZONE_NAME, instanceToDelete);
+        log.debug("***** Deleted instances- deleteInstance() - {} ****** "+instanceToDelete);
         return delete.execute();
     }
 
@@ -198,7 +199,7 @@ public class GCloudComputeOperations {
         log.debug("Waiting for operation completion...");
         Operation.Error error = blockUntilComplete(compute, op);
         if (error == null) {
-            log.info("Success!");
+            log.debug("******* Success! in deleting **********");
         } else {
             log.error(error.toPrettyString());
         }

@@ -14,6 +14,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import generated.KVStore;
 import generated.KVStoreServiceGrpc;
+import generated.Master;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.apache.log4j.Logger;
@@ -47,7 +48,7 @@ public class MapReduceMasterCoordinator {
     private static final String reducerKeyIdentifier = "reducer-";
     private ExecutorService executorService = Executors.newFixedThreadPool(50);
 
-    private ConcurrentMap<String,String>  mapperTaskStatus;
+    public static ConcurrentMap<String,String>  mapperTaskStatus;
     private ConcurrentMap<String,String>  reducerTaskStatus;
     static int counter=0;
 
@@ -216,16 +217,73 @@ public class MapReduceMasterCoordinator {
         // start reducers
         log.debug(Arrays.asList(mapperTaskStatus));
 
+
+
+        HashSet<String> statuses = new HashSet<String>();
         while(true){
+            try {
+                TimeUnit.SECONDS.sleep(20);
+            } catch (InterruptedException e) {
+               log.debug("****** THREAD SLEEP PROBLEM **********");
+            }
+
+            log.debug("********** MAPPER STATUS CHECK *********"+mapperTaskStatus);
+
+            mapperTaskStatus.forEach((k,v)->{
+                mapperTaskStatus.put(k,blockingStub.get(KVStore.GetRequest.newBuilder().setKey(k+"_status").build()).getValue());
+            });
+
             if(mapperTaskStatus.values().stream().allMatch("completed"::equals)){
+                destroyWorker(mapperTaskStatus);
                 log.debug("Mappers status"+Arrays.asList(mapperTaskStatus));
-                System.out.println("starting reducers");
+
                 for(int redInstance=0;redInstance<reducerCount;redInstance++){
-                    new Thread(new ReducerProcessGenerator(reducerFunction,reducerKeyIdentifier+redInstance, reducerTaskStatus,reducerCount,kVStoreIp,kVStorePort,outputFile,fileLocation)).start();
+                   // new Thread(new ReducerProcessGenerator(reducerFunction,reducerKeyIdentifier+redInstance, reducerTaskStatus,reducerCount,kVStoreIp,kVStorePort,outputFile,fileLocation)).start();
+                    System.out.println("********* STARTING REDUCERS ****************");
+                    Metadata metadata = getMetaData(reducerFunction,Integer.toString(reducerCount),kVStoreIp, reducerKeyIdentifier+redInstance,masterIP, outputFile,fileLocation);
+                    blockingStub.set(KVStore.SetRequest.newBuilder().setKey(reducerKeyIdentifier+redInstance+"_status").setValue("started").build());
+                    createTask(reducerKeyIdentifier+redInstance,metadata);
+                    reducerTaskStatus.put(reducerKeyIdentifier+redInstance,"started");
                 }
                 break;
             }
         }
+
+        while(true){
+            try {
+                TimeUnit.SECONDS.sleep(20);
+            } catch (InterruptedException e) {
+                log.debug("****** THREAD SLEEP PROBLEM **********");
+            }
+            log.debug("******** REDUCERS COMPLETED **********");
+            reducerTaskStatus.forEach((k,v)->{
+                reducerTaskStatus.put(k,blockingStub.get(KVStore.GetRequest.newBuilder().setKey(k+"_status").build()).getValue());
+            });
+
+            if(reducerTaskStatus.values().stream().allMatch("completed"::equals)){
+                log.debug("******** REDUCERS COMPLETED **********"+reducerTaskStatus);
+                destroyWorker(reducerTaskStatus);
+                log.debug("*********** REDUCERS DELETED ************");
+                break;
+            }
+
+        }
+        // Check status of reducers and shutdow everything
+
+        return;
+        //destroy cluster
+
+
+    }
+
+    private void destroyWorker(ConcurrentMap<String, String> workerTaskStatus) {
+        log.debug("******* destroying worker tasks for {} ******"+workerTaskStatus);
+        workerTaskStatus.forEach((k,v)->{
+            Future<Integer> future =  executorService.submit(() ->
+                    new GCloudComputeOperations(k).deleteInstance(k));
+            log.debug("******* destroying worker tasks for {} ******"+k);
+            workerTaskStatus.remove(k);
+        });
 
     }
 
@@ -242,6 +300,7 @@ public class MapReduceMasterCoordinator {
 
         log.debug("******* creating mapper tasks ******");
         Metadata metadata = getMetaData(mapperFunction,Integer.toString(reducerCount),kVStoreIp, mapperKey,masterIP, outputFile,fileLocation);
+        blockingStub.set(KVStore.SetRequest.newBuilder().setKey(mapperKey+"_status").setValue("started").build());
         createTask(mapperKey,metadata);
 
 
@@ -264,6 +323,7 @@ public class MapReduceMasterCoordinator {
         Future<Integer> future =  executorService.submit(() ->
                 new GCloudComputeOperations(instanceName).startInstance(metadata));
     }
+
 
     private Metadata getMetaData( String functionName, String reducerCount, String kvStoreDetails, String mapperName, String masterDetails, String outputFileLoc, String inputfileLoc) {
 

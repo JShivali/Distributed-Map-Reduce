@@ -9,12 +9,10 @@ generated\Master$Empty.class
 generated\Master$MapReduceResponse$Builder.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceFileDescriptorSupplier.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceMethodDescriptorSupplier.class
-generated\Master$Message$1.class
 ConfigParams.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceBlockingStub.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceImplBase.class
 generated\StartMapReduceServiceGrpc.class
-generated\Master$MessageOrBuilder.class
 generated\Master$Keys$Builder.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceBaseDescriptorSupplier.class
 generated\Master$Empty$Builder.class
@@ -23,13 +21,11 @@ generated\Master$EmptyOrBuilder.class
 generated\Master$MapReduceResponse.class
 MapReducerUserProgram.class
 generated\Master$MapReduceResponse$1.class
-generated\Master$Message$Builder.class
 generated\Master$1.class
 generated\Master$Keys.class
 generated\StartMapReduceServiceGrpc$StartMapReduceServiceStub.class
 generated\Master$Keys$1.class
 generated\Master$KeysOrBuilder.class
-generated\Master$Message.class
 generated\Master$MapReduceResponseOrBuilder.class
 ReadConfig.class
 generated\Master$MapReduceInputParamsOrBuilder.class

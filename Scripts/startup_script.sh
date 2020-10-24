@@ -39,8 +39,9 @@ case "$instancename" in
    "userprog-instance")
    echo "UserProg executed executed" >> /var/log/mylogs.log
    sudo chmod 777 /var/log/userproglog.out
-   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 2 2 /usr/app6/Distributed-Map-Reduce/Inputs/InvertedDataSet /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexMapper.jar /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexReducer.jar /usr/app6/Distributed-Map-Reduce/Outputs
-# jar_name, mapper_count,reducer_count, inputFileLocation (Mention the directory)
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 2 3 /usr/app6/Distributed-Map-Reduce/Inputs/InvertedDataSet /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexMapper.jar /usr/app6/Distributed-Map-Reduce/Outputs/InvertedIndexReducer.jar /usr/app6/Distributed-Map-Reduce/Outputs
+   java -jar /usr/app6/Distributed-Map-Reduce/Outputs/MapReduceUserProgram.jar 2 3 /usr/app6/Distributed-Map-Reduce/Inputs/WordCountData /usr/app6/Distributed-Map-Reduce/Outputs/WordMapperProject.jar /usr/app6/Distributed-Map-Reduce/Outputs/WordReducerProject.jar /usr/app6/Distributed-Map-Reduce/Outputs
+  #jar_name, mapper_count,reducer_count, inputFileLocation (Mention the directory), output directory
    ;;
 esac
 # Create a Google Cloud Storage bucket.

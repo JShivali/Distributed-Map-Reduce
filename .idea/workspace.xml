@@ -42,7 +42,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WordReducerProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/InvertedIndexMapper" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SvnConfiguration">
@@ -71,10 +71,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1280" y="329" key="FileChooserDialogImpl" timestamp="1603041931198">
-      <screen x="0" y="0" width="3440" height="1400" />
+    <state x="1280" y="323" key="FileChooserDialogImpl" timestamp="1603302182406">
+      <screen x="0" y="0" width="3440" height="1376" />
     </state>
     <state x="635" y="216" key="FileChooserDialogImpl/0.0.1707.920@0.0.1707.920" timestamp="1602103894941" />
+    <state x="1280" y="323" key="FileChooserDialogImpl/0.0.3440.1376@0.0.3440.1376" timestamp="1603302182406" />
     <state x="1280" y="329" key="FileChooserDialogImpl/0.0.3440.1400@0.0.3440.1400" timestamp="1603041931198" />
     <state x="364" y="106" key="SettingsEditor" timestamp="1602103713242">
       <screen x="0" y="0" width="1707" height="920" />

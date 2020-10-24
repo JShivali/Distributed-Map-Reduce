@@ -62,6 +62,7 @@ def create_instance(compute, project, zone, name, bucket):
     source_disk_image = image_response['selfLink']
 
     # Configure the machine
+    print("starting the scrip")
     machine_type = "zones/%s/machineTypes/n1-standard-1" % zone
     startup_script = open(
         os.path.join(
@@ -95,10 +96,15 @@ def create_instance(compute, project, zone, name, bucket):
 
         # Allow the instance to access cloud storage and logging.
         'serviceAccounts': [{
-            'email': 'default',
+            'email': '269373890514-compute@developer.gserviceaccount.com',
             'scopes': [
                 'https://www.googleapis.com/auth/devstorage.read_write',
-                'https://www.googleapis.com/auth/logging.write'
+                'https://www.googleapis.com/auth/logging.write',
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/compute',
+                'https://www.googleapis.com/auth/devstorage.full_control'
+
+
             ]
         }],
 
@@ -108,7 +114,7 @@ def create_instance(compute, project, zone, name, bucket):
             'items': [{
                 # Startup script is automatically executed by the
                 # instance upon startup.
-                'key': 'startup_script',
+                'key': 'startup-script',
                 'value': startup_script
             }, {
                 'key': 'url',
@@ -165,36 +171,34 @@ def wait_for_operation(compute, project, zone, operation):
 
 
 # [START run]
-def main(project, bucket, zone, instance_name, wait=True):
+def main(project, bucket, zone, instance_name,operation, wait=True):
     compute = googleapiclient.discovery.build('compute', 'v1')
 
-    print('Creating instance.')
+    if operation == 'create':
 
-    operation = create_instance(compute, project, zone, instance_name, bucket)
-    wait_for_operation(compute, project, zone, operation['name'])
+        print('Creating instance.')
+        operation = create_instance(compute, project, zone, instance_name, bucket)
+        wait_for_operation(compute, project, zone, operation['name'])
+        #start_instances(compute, project, zone, instance_name)
+        instances = list_instances(compute, project, zone)
 
-    #start_instances(compute, project, zone, instance_name)
+        print('Instances in project %s and zone %s:' % (project, zone))
+        for instance in instances:
+            print(' - ' + instance['name'])
 
-    instances = list_instances(compute, project, zone)
-
-    print('Instances in project %s and zone %s:' % (project, zone))
-    for instance in instances:
-        print(' - ' + instance['name'])
-
-    print("""
+        print("""
 Instance started.
 It will take a minute or two for the instance to complete work.
-Check this URL: http://storage.googleapis.com/{}/output.png
-Once the image is uploaded press enter to delete the instance.
 """.format(bucket))
-    if wait:
-        input()
-    stop_instances(compute, project, zone, instance_name)
+#    if wait:
+#        input()
 
-    print('Stopping instance.')
+#stop_instances(compute, project, zone, instance_name)
 
-    # operation = delete_instance(compute, project, zone, instance_name)
-    # wait_for_operation(compute, project, zone, operation['name'])
+#  print('Stopping instance.')
+
+# operation = delete_instance(compute, project, zone, instance_name)
+# wait_for_operation(compute, project, zone, operation['name'])
 
 
 if __name__ == '__main__':
@@ -218,12 +222,12 @@ if __name__ == '__main__':
     '''
 
     names = ["master-instance","kvstore-instance","userprog-instance"]
+    #,"kvstore-instance","userprog-instance"
 
     for name in names:
         project_id = 'cloud-map-reduce'
         bucket_name = 'cloud-map-red-bucket'
         zone = 'us-central1-a'
-        name = 'master-instance'
-        main(project_id, bucket_name, zone, name)
-
+        main(project_id, bucket_name, zone, name,'create')
+        time.sleep(20)
 # [END run]

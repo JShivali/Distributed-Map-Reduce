@@ -16,9 +16,14 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import org.apache.log4j.Logger;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.api.services.compute.ComputeScopes;
+import sun.misc.GC;
 
 import static generated.StartMapReduceServiceGrpc.newBlockingStub;
 
@@ -56,6 +61,9 @@ public class MapReducerUserProgram {
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     static ConfigParams prop = null;
     static Logger logger = Logger.getLogger(MapReducerUserProgram.class.getName());
+    private static ExecutorService executorService = Executors.newFixedThreadPool(50);
+
+    static List<String> clusterVMS= new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -75,6 +83,8 @@ public class MapReducerUserProgram {
         logger.debug(" ***** MAPPER FUNCTION *****"+mapperFunctionLoc);
         logger.debug(" ***** REDUCER FUNCTION *****"+reducerFunctionLoc);
         logger.debug(" ***** OUTPUT LOCATION *****"+outputLocation);
+        logger.debug(" ***** REDUCER COUNT *****"+reducercount);
+        logger.debug(" ***** MAPPER COUNT *****"+mappercount);
         logger.debug(" ********************************************");
 
         try {
@@ -122,8 +132,6 @@ public class MapReducerUserProgram {
 
         //read IPS from gcloud
 
-
-
         logger.debug(" ***** MAPREDUCEUSER PROGRAM HITTING STARTMAPREDUCE *****");
         StartMapReduceServiceGrpc.StartMapReduceServiceBlockingStub startMapReduceServiceBlockingStub = newBlockingStub(channel);
         System.out.println("Before sending the IPS are"+ prop.getkVStoreIp()+ " "+ prop.getMasterIP());
@@ -137,8 +145,13 @@ public class MapReducerUserProgram {
                                             .setMapperFunction(prop.getMapperFunction())
                                             .setReducerFunction(prop.getReducerFunction())
                                             .setOutputFile(prop.getOutputFile()).build();
-        startMapReduceServiceBlockingStub.mapReduce(input);
-
+        Master.MapReduceResponse mapReduceResponse =startMapReduceServiceBlockingStub.mapReduce(input);
+        if(mapReduceResponse.getResponseCode()==0 && mapReduceResponse.getResponseMessage().equals("JobCompleted")) {
+            //call destroy cluster
+            logger.debug("****************** MAP REDUCE JOB HAS BEEN COMPLETED ********************");
+            logger.debug("****************** DESTROYING CLUSTER ********************");
+            destroyCluster();
+        }
     }
     public static void initCluster(Compute compute, String projectId) throws IOException {
      logger.debug("================== Listing Compute Engine Instances ==================");
@@ -162,11 +175,26 @@ public class MapReducerUserProgram {
                 logger.debug("Setting KVStore IP");
                 prop.setkVStoreIp(networkInterfaces.get(0).getAccessConfigs().get(0).getNatIP());
             }
-
-
+            clusterVMS.add(instanceName);
         }
 
     }
 }
+
+    public static void destroyCluster(){
+
+
+        logger.debug("****************** CLUSTER DESTROYED ********************");
+
+        clusterVMS.forEach((instanceName)->{
+            logger.debug("******* DESTROYING CLUSTER VM ****** "+instanceName);
+            Future<Integer> future =  executorService.submit(() ->
+                new GCloudComputeOperations(instanceName).deleteInstance(instanceName));
+        });
+
+
+        logger.debug("****************** PLEASE CHECK THE BUCKET FOR REDUCER OUTPUTS ********************");
+
+    }
 
 }

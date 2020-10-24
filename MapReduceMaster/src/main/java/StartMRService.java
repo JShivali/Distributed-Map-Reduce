@@ -32,14 +32,10 @@ public class StartMRService extends StartMapReduceServiceGrpc.StartMapReduceServ
 
     }
 
-    InputStream inputStream;
-
-
-
     @Override
     public void mapReduce(Master.MapReduceInputParams request, StreamObserver<Master.MapReduceResponse> responseObserver) {
         // get details from the request and call the MapReduceCoordinator AKA the master node
-        log.debug("**** START MAP REDUCE HIT *****");
+        log.debug("**** START MAP REDUCE SERVICE HIT *****");
         kVStoreIp= request.getKVStoreIPAddress();
         kVStorePort= request.getKvstorePort();
         fileLocation = request.getFileLocation();
@@ -51,8 +47,14 @@ public class StartMRService extends StartMapReduceServiceGrpc.StartMapReduceServ
         reducerFunction=request.getReducerFunction();
         outputFile= request.getOutputFile();
 
+        log.debug("**** BEGINNING THE MAP REDUCE TASK *****");
         MapReduceMasterCoordinator mapReduceMasterCoordinator= new MapReduceMasterCoordinator(kVStoreIp,kVStorePort,fileLocation,mapperCount,reducerCount,masterIP,masterPort,mapperFunction,reducerFunction,outputFile);
         mapReduceMasterCoordinator.mapReduce();
+
+        log.debug("*************** MAP REDUCE COMPLETED  **************");
+
+        responseObserver.onNext(Master.MapReduceResponse.newBuilder().setResponseCode(0).setResponseMessage("JobCompleted").build());
+        responseObserver.onCompleted();
 
     }
 }

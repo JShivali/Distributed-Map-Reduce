@@ -6,6 +6,55 @@ service StartMapReduceService{
     rpc mapReduce(MapReduceInputParams)  returns (MapReduceResponse);
 }
 
+service MapperStatusService{
+  rpc getMapperStatus(GetMapperStatusRequest) returns (GetMapperStatusResponse);
+  rpc setMapperStatus(SetMapperStatusRequest) returns (SetMapperStatusResponse);
+}
+
+message GetMapperStatusRequest{
+  string mapperName = 1;
+}
+
+message GetMapperStatusResponse{
+  string mapperStatus = 1;
+}
+
+message SetMapperStatusRequest{
+  string mapperName = 1;
+  string mapperStatus = 2;
+
+}
+
+message SetMapperStatusResponse{
+  string mapperStatus = 1;
+}
+
+
+service ReducerStatusService{
+  rpc getReducerStatus(GetReducerStatusRequest) returns (GetReducerStatusResponse);
+  rpc setReducerStatus(SetReducerStatusRequest) returns (SetReducerStatusResponse);
+}
+
+message GetReducerStatusRequest{
+  string reducerName = 1;
+}
+
+message GetReducerStatusResponse{
+  string reducerStatus = 1;
+}
+
+message SetReducerStatusRequest{
+  string reducerName = 1;
+  string reducerStatus = 2;
+
+}
+
+message SetReducerStatusResponse{
+  string reducerStatus = 1;
+}
+
+
+
 message MapReduceInputParams{
        int32 mapperCount = 1 ;
        int32 reducerCount = 2 ;
@@ -20,8 +69,8 @@ message MapReduceInputParams{
 }
 
 message MapReduceResponse{
-      Keys keys  = 1;
-      Message message  = 2;
+  int32 responseCode = 1;
+  string responseMessage = 2;
 }
 
 message Keys {
@@ -31,7 +80,3 @@ message Keys {
 message Empty{
 }
 
-message Message {
-    int32 responseCode = 1;
-    string responseMessage = 2;
-}

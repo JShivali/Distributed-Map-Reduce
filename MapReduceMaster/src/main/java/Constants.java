@@ -25,7 +25,7 @@ public class Constants {
     public static final String NETWORK_ACCESS_CONFIG = "External NAT";
 
     /** Set the time out limit for operation calls to the Compute Engine API. */
-    public static final long OPERATION_TIMEOUT_MILLIS = 60 * 1000;
+    public static final long OPERATION_TIMEOUT_MILLIS = 60 * 1000 * 2;
 
 
 

@@ -6,11 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="KVServer" />
+        <module name="WordReducerProject" />
+        <module name="WordMapperProject" />
+        <module name="MapReduceUserProgram" />
         <module name="InvertedIndexMapper" />
+        <module name="MapReduceMaster" />
+        <module name="InvertedIndexReducer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="InvertedIndexMapper" target="8" />
+      <module name="InvertedIndexReducer" target="8" />
+      <module name="KVServer" target="8" />
+      <module name="MapReduceMaster" target="1.8" />
+      <module name="MapReduceUserProgram" target="1.8" />
+      <module name="WordMapperProject" target="8" />
+      <module name="WordReducerProject" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

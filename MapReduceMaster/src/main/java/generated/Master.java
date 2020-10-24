@@ -14,6 +14,4680 @@ public final class Master {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface GetMapperStatusRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetMapperStatusRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    java.lang.String getMapperName();
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMapperNameBytes();
+  }
+  /**
+   * Protobuf type {@code GetMapperStatusRequest}
+   */
+  public  static final class GetMapperStatusRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetMapperStatusRequest)
+      GetMapperStatusRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetMapperStatusRequest.newBuilder() to construct.
+    private GetMapperStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetMapperStatusRequest() {
+      mapperName_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetMapperStatusRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mapperName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_GetMapperStatusRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_GetMapperStatusRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.GetMapperStatusRequest.class, generated.Master.GetMapperStatusRequest.Builder.class);
+    }
+
+    public static final int MAPPERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mapperName_;
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    public java.lang.String getMapperName() {
+      java.lang.Object ref = mapperName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mapperName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMapperNameBytes() {
+      java.lang.Object ref = mapperName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mapperName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMapperNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mapperName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMapperNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mapperName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.GetMapperStatusRequest)) {
+        return super.equals(obj);
+      }
+      generated.Master.GetMapperStatusRequest other = (generated.Master.GetMapperStatusRequest) obj;
+
+      boolean result = true;
+      result = result && getMapperName()
+          .equals(other.getMapperName());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAPPERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMapperName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.GetMapperStatusRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetMapperStatusRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetMapperStatusRequest)
+        generated.Master.GetMapperStatusRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_GetMapperStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_GetMapperStatusRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.GetMapperStatusRequest.class, generated.Master.GetMapperStatusRequest.Builder.class);
+      }
+
+      // Construct using generated.Master.GetMapperStatusRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mapperName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_GetMapperStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusRequest getDefaultInstanceForType() {
+        return generated.Master.GetMapperStatusRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusRequest build() {
+        generated.Master.GetMapperStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusRequest buildPartial() {
+        generated.Master.GetMapperStatusRequest result = new generated.Master.GetMapperStatusRequest(this);
+        result.mapperName_ = mapperName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.GetMapperStatusRequest) {
+          return mergeFrom((generated.Master.GetMapperStatusRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.GetMapperStatusRequest other) {
+        if (other == generated.Master.GetMapperStatusRequest.getDefaultInstance()) return this;
+        if (!other.getMapperName().isEmpty()) {
+          mapperName_ = other.mapperName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.GetMapperStatusRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.GetMapperStatusRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mapperName_ = "";
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public java.lang.String getMapperName() {
+        java.lang.Object ref = mapperName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mapperName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMapperNameBytes() {
+        java.lang.Object ref = mapperName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mapperName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder setMapperName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mapperName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder clearMapperName() {
+        
+        mapperName_ = getDefaultInstance().getMapperName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder setMapperNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mapperName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetMapperStatusRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetMapperStatusRequest)
+    private static final generated.Master.GetMapperStatusRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.GetMapperStatusRequest();
+    }
+
+    public static generated.Master.GetMapperStatusRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetMapperStatusRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetMapperStatusRequest>() {
+      @java.lang.Override
+      public GetMapperStatusRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetMapperStatusRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetMapperStatusRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMapperStatusRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.GetMapperStatusRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetMapperStatusResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetMapperStatusResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    java.lang.String getMapperStatus();
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMapperStatusBytes();
+  }
+  /**
+   * Protobuf type {@code GetMapperStatusResponse}
+   */
+  public  static final class GetMapperStatusResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetMapperStatusResponse)
+      GetMapperStatusResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetMapperStatusResponse.newBuilder() to construct.
+    private GetMapperStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetMapperStatusResponse() {
+      mapperStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetMapperStatusResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mapperStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_GetMapperStatusResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_GetMapperStatusResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.GetMapperStatusResponse.class, generated.Master.GetMapperStatusResponse.Builder.class);
+    }
+
+    public static final int MAPPERSTATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mapperStatus_;
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    public java.lang.String getMapperStatus() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mapperStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMapperStatusBytes() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mapperStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMapperStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mapperStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMapperStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mapperStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.GetMapperStatusResponse)) {
+        return super.equals(obj);
+      }
+      generated.Master.GetMapperStatusResponse other = (generated.Master.GetMapperStatusResponse) obj;
+
+      boolean result = true;
+      result = result && getMapperStatus()
+          .equals(other.getMapperStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAPPERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getMapperStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetMapperStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.GetMapperStatusResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetMapperStatusResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetMapperStatusResponse)
+        generated.Master.GetMapperStatusResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_GetMapperStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_GetMapperStatusResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.GetMapperStatusResponse.class, generated.Master.GetMapperStatusResponse.Builder.class);
+      }
+
+      // Construct using generated.Master.GetMapperStatusResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mapperStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_GetMapperStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusResponse getDefaultInstanceForType() {
+        return generated.Master.GetMapperStatusResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusResponse build() {
+        generated.Master.GetMapperStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetMapperStatusResponse buildPartial() {
+        generated.Master.GetMapperStatusResponse result = new generated.Master.GetMapperStatusResponse(this);
+        result.mapperStatus_ = mapperStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.GetMapperStatusResponse) {
+          return mergeFrom((generated.Master.GetMapperStatusResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.GetMapperStatusResponse other) {
+        if (other == generated.Master.GetMapperStatusResponse.getDefaultInstance()) return this;
+        if (!other.getMapperStatus().isEmpty()) {
+          mapperStatus_ = other.mapperStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.GetMapperStatusResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.GetMapperStatusResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mapperStatus_ = "";
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public java.lang.String getMapperStatus() {
+        java.lang.Object ref = mapperStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mapperStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMapperStatusBytes() {
+        java.lang.Object ref = mapperStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mapperStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder setMapperStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder clearMapperStatus() {
+        
+        mapperStatus_ = getDefaultInstance().getMapperStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder setMapperStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetMapperStatusResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetMapperStatusResponse)
+    private static final generated.Master.GetMapperStatusResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.GetMapperStatusResponse();
+    }
+
+    public static generated.Master.GetMapperStatusResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetMapperStatusResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetMapperStatusResponse>() {
+      @java.lang.Override
+      public GetMapperStatusResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetMapperStatusResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetMapperStatusResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetMapperStatusResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.GetMapperStatusResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SetMapperStatusRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SetMapperStatusRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    java.lang.String getMapperName();
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMapperNameBytes();
+
+    /**
+     * <code>string mapperStatus = 2;</code>
+     */
+    java.lang.String getMapperStatus();
+    /**
+     * <code>string mapperStatus = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMapperStatusBytes();
+  }
+  /**
+   * Protobuf type {@code SetMapperStatusRequest}
+   */
+  public  static final class SetMapperStatusRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SetMapperStatusRequest)
+      SetMapperStatusRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SetMapperStatusRequest.newBuilder() to construct.
+    private SetMapperStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SetMapperStatusRequest() {
+      mapperName_ = "";
+      mapperStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SetMapperStatusRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mapperName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mapperStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_SetMapperStatusRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_SetMapperStatusRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.SetMapperStatusRequest.class, generated.Master.SetMapperStatusRequest.Builder.class);
+    }
+
+    public static final int MAPPERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mapperName_;
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    public java.lang.String getMapperName() {
+      java.lang.Object ref = mapperName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mapperName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mapperName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMapperNameBytes() {
+      java.lang.Object ref = mapperName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mapperName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MAPPERSTATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object mapperStatus_;
+    /**
+     * <code>string mapperStatus = 2;</code>
+     */
+    public java.lang.String getMapperStatus() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mapperStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mapperStatus = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMapperStatusBytes() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mapperStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMapperNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mapperName_);
+      }
+      if (!getMapperStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mapperStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMapperNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mapperName_);
+      }
+      if (!getMapperStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mapperStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.SetMapperStatusRequest)) {
+        return super.equals(obj);
+      }
+      generated.Master.SetMapperStatusRequest other = (generated.Master.SetMapperStatusRequest) obj;
+
+      boolean result = true;
+      result = result && getMapperName()
+          .equals(other.getMapperName());
+      result = result && getMapperStatus()
+          .equals(other.getMapperStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAPPERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getMapperName().hashCode();
+      hash = (37 * hash) + MAPPERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getMapperStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.SetMapperStatusRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SetMapperStatusRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SetMapperStatusRequest)
+        generated.Master.SetMapperStatusRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_SetMapperStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_SetMapperStatusRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.SetMapperStatusRequest.class, generated.Master.SetMapperStatusRequest.Builder.class);
+      }
+
+      // Construct using generated.Master.SetMapperStatusRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mapperName_ = "";
+
+        mapperStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_SetMapperStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusRequest getDefaultInstanceForType() {
+        return generated.Master.SetMapperStatusRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusRequest build() {
+        generated.Master.SetMapperStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusRequest buildPartial() {
+        generated.Master.SetMapperStatusRequest result = new generated.Master.SetMapperStatusRequest(this);
+        result.mapperName_ = mapperName_;
+        result.mapperStatus_ = mapperStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.SetMapperStatusRequest) {
+          return mergeFrom((generated.Master.SetMapperStatusRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.SetMapperStatusRequest other) {
+        if (other == generated.Master.SetMapperStatusRequest.getDefaultInstance()) return this;
+        if (!other.getMapperName().isEmpty()) {
+          mapperName_ = other.mapperName_;
+          onChanged();
+        }
+        if (!other.getMapperStatus().isEmpty()) {
+          mapperStatus_ = other.mapperStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.SetMapperStatusRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.SetMapperStatusRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mapperName_ = "";
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public java.lang.String getMapperName() {
+        java.lang.Object ref = mapperName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mapperName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMapperNameBytes() {
+        java.lang.Object ref = mapperName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mapperName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder setMapperName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mapperName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder clearMapperName() {
+        
+        mapperName_ = getDefaultInstance().getMapperName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperName = 1;</code>
+       */
+      public Builder setMapperNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mapperName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mapperStatus_ = "";
+      /**
+       * <code>string mapperStatus = 2;</code>
+       */
+      public java.lang.String getMapperStatus() {
+        java.lang.Object ref = mapperStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mapperStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMapperStatusBytes() {
+        java.lang.Object ref = mapperStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mapperStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 2;</code>
+       */
+      public Builder setMapperStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 2;</code>
+       */
+      public Builder clearMapperStatus() {
+        
+        mapperStatus_ = getDefaultInstance().getMapperStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 2;</code>
+       */
+      public Builder setMapperStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SetMapperStatusRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:SetMapperStatusRequest)
+    private static final generated.Master.SetMapperStatusRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.SetMapperStatusRequest();
+    }
+
+    public static generated.Master.SetMapperStatusRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SetMapperStatusRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SetMapperStatusRequest>() {
+      @java.lang.Override
+      public SetMapperStatusRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SetMapperStatusRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SetMapperStatusRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SetMapperStatusRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.SetMapperStatusRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SetMapperStatusResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SetMapperStatusResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    java.lang.String getMapperStatus();
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMapperStatusBytes();
+  }
+  /**
+   * Protobuf type {@code SetMapperStatusResponse}
+   */
+  public  static final class SetMapperStatusResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SetMapperStatusResponse)
+      SetMapperStatusResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SetMapperStatusResponse.newBuilder() to construct.
+    private SetMapperStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SetMapperStatusResponse() {
+      mapperStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SetMapperStatusResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mapperStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_SetMapperStatusResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_SetMapperStatusResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.SetMapperStatusResponse.class, generated.Master.SetMapperStatusResponse.Builder.class);
+    }
+
+    public static final int MAPPERSTATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mapperStatus_;
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    public java.lang.String getMapperStatus() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mapperStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mapperStatus = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMapperStatusBytes() {
+      java.lang.Object ref = mapperStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mapperStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMapperStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mapperStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMapperStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mapperStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.SetMapperStatusResponse)) {
+        return super.equals(obj);
+      }
+      generated.Master.SetMapperStatusResponse other = (generated.Master.SetMapperStatusResponse) obj;
+
+      boolean result = true;
+      result = result && getMapperStatus()
+          .equals(other.getMapperStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAPPERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getMapperStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetMapperStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.SetMapperStatusResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SetMapperStatusResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SetMapperStatusResponse)
+        generated.Master.SetMapperStatusResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_SetMapperStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_SetMapperStatusResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.SetMapperStatusResponse.class, generated.Master.SetMapperStatusResponse.Builder.class);
+      }
+
+      // Construct using generated.Master.SetMapperStatusResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mapperStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_SetMapperStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusResponse getDefaultInstanceForType() {
+        return generated.Master.SetMapperStatusResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusResponse build() {
+        generated.Master.SetMapperStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetMapperStatusResponse buildPartial() {
+        generated.Master.SetMapperStatusResponse result = new generated.Master.SetMapperStatusResponse(this);
+        result.mapperStatus_ = mapperStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.SetMapperStatusResponse) {
+          return mergeFrom((generated.Master.SetMapperStatusResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.SetMapperStatusResponse other) {
+        if (other == generated.Master.SetMapperStatusResponse.getDefaultInstance()) return this;
+        if (!other.getMapperStatus().isEmpty()) {
+          mapperStatus_ = other.mapperStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.SetMapperStatusResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.SetMapperStatusResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mapperStatus_ = "";
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public java.lang.String getMapperStatus() {
+        java.lang.Object ref = mapperStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mapperStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMapperStatusBytes() {
+        java.lang.Object ref = mapperStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mapperStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder setMapperStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder clearMapperStatus() {
+        
+        mapperStatus_ = getDefaultInstance().getMapperStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mapperStatus = 1;</code>
+       */
+      public Builder setMapperStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mapperStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SetMapperStatusResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:SetMapperStatusResponse)
+    private static final generated.Master.SetMapperStatusResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.SetMapperStatusResponse();
+    }
+
+    public static generated.Master.SetMapperStatusResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SetMapperStatusResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SetMapperStatusResponse>() {
+      @java.lang.Override
+      public SetMapperStatusResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SetMapperStatusResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SetMapperStatusResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SetMapperStatusResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.SetMapperStatusResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetReducerStatusRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetReducerStatusRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    java.lang.String getReducerName();
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getReducerNameBytes();
+  }
+  /**
+   * Protobuf type {@code GetReducerStatusRequest}
+   */
+  public  static final class GetReducerStatusRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetReducerStatusRequest)
+      GetReducerStatusRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetReducerStatusRequest.newBuilder() to construct.
+    private GetReducerStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetReducerStatusRequest() {
+      reducerName_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetReducerStatusRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reducerName_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_GetReducerStatusRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_GetReducerStatusRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.GetReducerStatusRequest.class, generated.Master.GetReducerStatusRequest.Builder.class);
+    }
+
+    public static final int REDUCERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object reducerName_;
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    public java.lang.String getReducerName() {
+      java.lang.Object ref = reducerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reducerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReducerNameBytes() {
+      java.lang.Object ref = reducerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reducerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getReducerNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reducerName_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getReducerNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reducerName_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.GetReducerStatusRequest)) {
+        return super.equals(obj);
+      }
+      generated.Master.GetReducerStatusRequest other = (generated.Master.GetReducerStatusRequest) obj;
+
+      boolean result = true;
+      result = result && getReducerName()
+          .equals(other.getReducerName());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REDUCERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getReducerName().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.GetReducerStatusRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetReducerStatusRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetReducerStatusRequest)
+        generated.Master.GetReducerStatusRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_GetReducerStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_GetReducerStatusRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.GetReducerStatusRequest.class, generated.Master.GetReducerStatusRequest.Builder.class);
+      }
+
+      // Construct using generated.Master.GetReducerStatusRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reducerName_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_GetReducerStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusRequest getDefaultInstanceForType() {
+        return generated.Master.GetReducerStatusRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusRequest build() {
+        generated.Master.GetReducerStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusRequest buildPartial() {
+        generated.Master.GetReducerStatusRequest result = new generated.Master.GetReducerStatusRequest(this);
+        result.reducerName_ = reducerName_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.GetReducerStatusRequest) {
+          return mergeFrom((generated.Master.GetReducerStatusRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.GetReducerStatusRequest other) {
+        if (other == generated.Master.GetReducerStatusRequest.getDefaultInstance()) return this;
+        if (!other.getReducerName().isEmpty()) {
+          reducerName_ = other.reducerName_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.GetReducerStatusRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.GetReducerStatusRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object reducerName_ = "";
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public java.lang.String getReducerName() {
+        java.lang.Object ref = reducerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reducerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReducerNameBytes() {
+        java.lang.Object ref = reducerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reducerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder setReducerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reducerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder clearReducerName() {
+        
+        reducerName_ = getDefaultInstance().getReducerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder setReducerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reducerName_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetReducerStatusRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetReducerStatusRequest)
+    private static final generated.Master.GetReducerStatusRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.GetReducerStatusRequest();
+    }
+
+    public static generated.Master.GetReducerStatusRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetReducerStatusRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetReducerStatusRequest>() {
+      @java.lang.Override
+      public GetReducerStatusRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetReducerStatusRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetReducerStatusRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetReducerStatusRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.GetReducerStatusRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetReducerStatusResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetReducerStatusResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    java.lang.String getReducerStatus();
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getReducerStatusBytes();
+  }
+  /**
+   * Protobuf type {@code GetReducerStatusResponse}
+   */
+  public  static final class GetReducerStatusResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetReducerStatusResponse)
+      GetReducerStatusResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetReducerStatusResponse.newBuilder() to construct.
+    private GetReducerStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetReducerStatusResponse() {
+      reducerStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetReducerStatusResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reducerStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_GetReducerStatusResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_GetReducerStatusResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.GetReducerStatusResponse.class, generated.Master.GetReducerStatusResponse.Builder.class);
+    }
+
+    public static final int REDUCERSTATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object reducerStatus_;
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    public java.lang.String getReducerStatus() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reducerStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReducerStatusBytes() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reducerStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getReducerStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reducerStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getReducerStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reducerStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.GetReducerStatusResponse)) {
+        return super.equals(obj);
+      }
+      generated.Master.GetReducerStatusResponse other = (generated.Master.GetReducerStatusResponse) obj;
+
+      boolean result = true;
+      result = result && getReducerStatus()
+          .equals(other.getReducerStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REDUCERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getReducerStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.GetReducerStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.GetReducerStatusResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetReducerStatusResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetReducerStatusResponse)
+        generated.Master.GetReducerStatusResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_GetReducerStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_GetReducerStatusResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.GetReducerStatusResponse.class, generated.Master.GetReducerStatusResponse.Builder.class);
+      }
+
+      // Construct using generated.Master.GetReducerStatusResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reducerStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_GetReducerStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusResponse getDefaultInstanceForType() {
+        return generated.Master.GetReducerStatusResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusResponse build() {
+        generated.Master.GetReducerStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.GetReducerStatusResponse buildPartial() {
+        generated.Master.GetReducerStatusResponse result = new generated.Master.GetReducerStatusResponse(this);
+        result.reducerStatus_ = reducerStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.GetReducerStatusResponse) {
+          return mergeFrom((generated.Master.GetReducerStatusResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.GetReducerStatusResponse other) {
+        if (other == generated.Master.GetReducerStatusResponse.getDefaultInstance()) return this;
+        if (!other.getReducerStatus().isEmpty()) {
+          reducerStatus_ = other.reducerStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.GetReducerStatusResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.GetReducerStatusResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object reducerStatus_ = "";
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public java.lang.String getReducerStatus() {
+        java.lang.Object ref = reducerStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reducerStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReducerStatusBytes() {
+        java.lang.Object ref = reducerStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reducerStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder setReducerStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder clearReducerStatus() {
+        
+        reducerStatus_ = getDefaultInstance().getReducerStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder setReducerStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetReducerStatusResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetReducerStatusResponse)
+    private static final generated.Master.GetReducerStatusResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.GetReducerStatusResponse();
+    }
+
+    public static generated.Master.GetReducerStatusResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetReducerStatusResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GetReducerStatusResponse>() {
+      @java.lang.Override
+      public GetReducerStatusResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetReducerStatusResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetReducerStatusResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetReducerStatusResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.GetReducerStatusResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SetReducerStatusRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SetReducerStatusRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    java.lang.String getReducerName();
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getReducerNameBytes();
+
+    /**
+     * <code>string reducerStatus = 2;</code>
+     */
+    java.lang.String getReducerStatus();
+    /**
+     * <code>string reducerStatus = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getReducerStatusBytes();
+  }
+  /**
+   * Protobuf type {@code SetReducerStatusRequest}
+   */
+  public  static final class SetReducerStatusRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SetReducerStatusRequest)
+      SetReducerStatusRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SetReducerStatusRequest.newBuilder() to construct.
+    private SetReducerStatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SetReducerStatusRequest() {
+      reducerName_ = "";
+      reducerStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SetReducerStatusRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reducerName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reducerStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_SetReducerStatusRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_SetReducerStatusRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.SetReducerStatusRequest.class, generated.Master.SetReducerStatusRequest.Builder.class);
+    }
+
+    public static final int REDUCERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object reducerName_;
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    public java.lang.String getReducerName() {
+      java.lang.Object ref = reducerName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reducerName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reducerName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReducerNameBytes() {
+      java.lang.Object ref = reducerName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reducerName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REDUCERSTATUS_FIELD_NUMBER = 2;
+    private volatile java.lang.Object reducerStatus_;
+    /**
+     * <code>string reducerStatus = 2;</code>
+     */
+    public java.lang.String getReducerStatus() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reducerStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reducerStatus = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReducerStatusBytes() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reducerStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getReducerNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reducerName_);
+      }
+      if (!getReducerStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, reducerStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getReducerNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reducerName_);
+      }
+      if (!getReducerStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, reducerStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.SetReducerStatusRequest)) {
+        return super.equals(obj);
+      }
+      generated.Master.SetReducerStatusRequest other = (generated.Master.SetReducerStatusRequest) obj;
+
+      boolean result = true;
+      result = result && getReducerName()
+          .equals(other.getReducerName());
+      result = result && getReducerStatus()
+          .equals(other.getReducerStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REDUCERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getReducerName().hashCode();
+      hash = (37 * hash) + REDUCERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getReducerStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.SetReducerStatusRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SetReducerStatusRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SetReducerStatusRequest)
+        generated.Master.SetReducerStatusRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_SetReducerStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_SetReducerStatusRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.SetReducerStatusRequest.class, generated.Master.SetReducerStatusRequest.Builder.class);
+      }
+
+      // Construct using generated.Master.SetReducerStatusRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reducerName_ = "";
+
+        reducerStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_SetReducerStatusRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusRequest getDefaultInstanceForType() {
+        return generated.Master.SetReducerStatusRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusRequest build() {
+        generated.Master.SetReducerStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusRequest buildPartial() {
+        generated.Master.SetReducerStatusRequest result = new generated.Master.SetReducerStatusRequest(this);
+        result.reducerName_ = reducerName_;
+        result.reducerStatus_ = reducerStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.SetReducerStatusRequest) {
+          return mergeFrom((generated.Master.SetReducerStatusRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.SetReducerStatusRequest other) {
+        if (other == generated.Master.SetReducerStatusRequest.getDefaultInstance()) return this;
+        if (!other.getReducerName().isEmpty()) {
+          reducerName_ = other.reducerName_;
+          onChanged();
+        }
+        if (!other.getReducerStatus().isEmpty()) {
+          reducerStatus_ = other.reducerStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.SetReducerStatusRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.SetReducerStatusRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object reducerName_ = "";
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public java.lang.String getReducerName() {
+        java.lang.Object ref = reducerName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reducerName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReducerNameBytes() {
+        java.lang.Object ref = reducerName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reducerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder setReducerName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reducerName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder clearReducerName() {
+        
+        reducerName_ = getDefaultInstance().getReducerName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerName = 1;</code>
+       */
+      public Builder setReducerNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reducerName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object reducerStatus_ = "";
+      /**
+       * <code>string reducerStatus = 2;</code>
+       */
+      public java.lang.String getReducerStatus() {
+        java.lang.Object ref = reducerStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reducerStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReducerStatusBytes() {
+        java.lang.Object ref = reducerStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reducerStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 2;</code>
+       */
+      public Builder setReducerStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 2;</code>
+       */
+      public Builder clearReducerStatus() {
+        
+        reducerStatus_ = getDefaultInstance().getReducerStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 2;</code>
+       */
+      public Builder setReducerStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SetReducerStatusRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:SetReducerStatusRequest)
+    private static final generated.Master.SetReducerStatusRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.SetReducerStatusRequest();
+    }
+
+    public static generated.Master.SetReducerStatusRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SetReducerStatusRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SetReducerStatusRequest>() {
+      @java.lang.Override
+      public SetReducerStatusRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SetReducerStatusRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SetReducerStatusRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SetReducerStatusRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.SetReducerStatusRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SetReducerStatusResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:SetReducerStatusResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    java.lang.String getReducerStatus();
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getReducerStatusBytes();
+  }
+  /**
+   * Protobuf type {@code SetReducerStatusResponse}
+   */
+  public  static final class SetReducerStatusResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:SetReducerStatusResponse)
+      SetReducerStatusResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SetReducerStatusResponse.newBuilder() to construct.
+    private SetReducerStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SetReducerStatusResponse() {
+      reducerStatus_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SetReducerStatusResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reducerStatus_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return generated.Master.internal_static_SetReducerStatusResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return generated.Master.internal_static_SetReducerStatusResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              generated.Master.SetReducerStatusResponse.class, generated.Master.SetReducerStatusResponse.Builder.class);
+    }
+
+    public static final int REDUCERSTATUS_FIELD_NUMBER = 1;
+    private volatile java.lang.Object reducerStatus_;
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    public java.lang.String getReducerStatus() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reducerStatus_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string reducerStatus = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReducerStatusBytes() {
+      java.lang.Object ref = reducerStatus_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        reducerStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getReducerStatusBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reducerStatus_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getReducerStatusBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reducerStatus_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof generated.Master.SetReducerStatusResponse)) {
+        return super.equals(obj);
+      }
+      generated.Master.SetReducerStatusResponse other = (generated.Master.SetReducerStatusResponse) obj;
+
+      boolean result = true;
+      result = result && getReducerStatus()
+          .equals(other.getReducerStatus());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REDUCERSTATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getReducerStatus().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static generated.Master.SetReducerStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(generated.Master.SetReducerStatusResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code SetReducerStatusResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:SetReducerStatusResponse)
+        generated.Master.SetReducerStatusResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return generated.Master.internal_static_SetReducerStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return generated.Master.internal_static_SetReducerStatusResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                generated.Master.SetReducerStatusResponse.class, generated.Master.SetReducerStatusResponse.Builder.class);
+      }
+
+      // Construct using generated.Master.SetReducerStatusResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        reducerStatus_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return generated.Master.internal_static_SetReducerStatusResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusResponse getDefaultInstanceForType() {
+        return generated.Master.SetReducerStatusResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusResponse build() {
+        generated.Master.SetReducerStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public generated.Master.SetReducerStatusResponse buildPartial() {
+        generated.Master.SetReducerStatusResponse result = new generated.Master.SetReducerStatusResponse(this);
+        result.reducerStatus_ = reducerStatus_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof generated.Master.SetReducerStatusResponse) {
+          return mergeFrom((generated.Master.SetReducerStatusResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(generated.Master.SetReducerStatusResponse other) {
+        if (other == generated.Master.SetReducerStatusResponse.getDefaultInstance()) return this;
+        if (!other.getReducerStatus().isEmpty()) {
+          reducerStatus_ = other.reducerStatus_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        generated.Master.SetReducerStatusResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (generated.Master.SetReducerStatusResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object reducerStatus_ = "";
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public java.lang.String getReducerStatus() {
+        java.lang.Object ref = reducerStatus_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reducerStatus_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReducerStatusBytes() {
+        java.lang.Object ref = reducerStatus_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          reducerStatus_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder setReducerStatus(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder clearReducerStatus() {
+        
+        reducerStatus_ = getDefaultInstance().getReducerStatus();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string reducerStatus = 1;</code>
+       */
+      public Builder setReducerStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        reducerStatus_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:SetReducerStatusResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:SetReducerStatusResponse)
+    private static final generated.Master.SetReducerStatusResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new generated.Master.SetReducerStatusResponse();
+    }
+
+    public static generated.Master.SetReducerStatusResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SetReducerStatusResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SetReducerStatusResponse>() {
+      @java.lang.Override
+      public SetReducerStatusResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SetReducerStatusResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SetReducerStatusResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SetReducerStatusResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public generated.Master.SetReducerStatusResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MapReduceInputParamsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:MapReduceInputParams)
       com.google.protobuf.MessageOrBuilder {
@@ -1506,30 +6180,19 @@ public final class Master {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Keys keys = 1;</code>
+     * <code>int32 responseCode = 1;</code>
      */
-    boolean hasKeys();
-    /**
-     * <code>.Keys keys = 1;</code>
-     */
-    generated.Master.Keys getKeys();
-    /**
-     * <code>.Keys keys = 1;</code>
-     */
-    generated.Master.KeysOrBuilder getKeysOrBuilder();
+    int getResponseCode();
 
     /**
-     * <code>.Message message = 2;</code>
+     * <code>string responseMessage = 2;</code>
      */
-    boolean hasMessage();
+    java.lang.String getResponseMessage();
     /**
-     * <code>.Message message = 2;</code>
+     * <code>string responseMessage = 2;</code>
      */
-    generated.Master.Message getMessage();
-    /**
-     * <code>.Message message = 2;</code>
-     */
-    generated.Master.MessageOrBuilder getMessageOrBuilder();
+    com.google.protobuf.ByteString
+        getResponseMessageBytes();
   }
   /**
    * Protobuf type {@code MapReduceResponse}
@@ -1544,6 +6207,8 @@ public final class Master {
       super(builder);
     }
     private MapReduceResponse() {
+      responseCode_ = 0;
+      responseMessage_ = "";
     }
 
     @java.lang.Override
@@ -1570,30 +6235,15 @@ public final class Master {
             case 0:
               done = true;
               break;
-            case 10: {
-              generated.Master.Keys.Builder subBuilder = null;
-              if (keys_ != null) {
-                subBuilder = keys_.toBuilder();
-              }
-              keys_ = input.readMessage(generated.Master.Keys.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(keys_);
-                keys_ = subBuilder.buildPartial();
-              }
+            case 8: {
 
+              responseCode_ = input.readInt32();
               break;
             }
             case 18: {
-              generated.Master.Message.Builder subBuilder = null;
-              if (message_ != null) {
-                subBuilder = message_.toBuilder();
-              }
-              message_ = input.readMessage(generated.Master.Message.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(message_);
-                message_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              responseMessage_ = s;
               break;
             }
             default: {
@@ -1628,46 +6278,47 @@ public final class Master {
               generated.Master.MapReduceResponse.class, generated.Master.MapReduceResponse.Builder.class);
     }
 
-    public static final int KEYS_FIELD_NUMBER = 1;
-    private generated.Master.Keys keys_;
+    public static final int RESPONSECODE_FIELD_NUMBER = 1;
+    private int responseCode_;
     /**
-     * <code>.Keys keys = 1;</code>
+     * <code>int32 responseCode = 1;</code>
      */
-    public boolean hasKeys() {
-      return keys_ != null;
-    }
-    /**
-     * <code>.Keys keys = 1;</code>
-     */
-    public generated.Master.Keys getKeys() {
-      return keys_ == null ? generated.Master.Keys.getDefaultInstance() : keys_;
-    }
-    /**
-     * <code>.Keys keys = 1;</code>
-     */
-    public generated.Master.KeysOrBuilder getKeysOrBuilder() {
-      return getKeys();
+    public int getResponseCode() {
+      return responseCode_;
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    private generated.Master.Message message_;
+    public static final int RESPONSEMESSAGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object responseMessage_;
     /**
-     * <code>.Message message = 2;</code>
+     * <code>string responseMessage = 2;</code>
      */
-    public boolean hasMessage() {
-      return message_ != null;
+    public java.lang.String getResponseMessage() {
+      java.lang.Object ref = responseMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseMessage_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Message message = 2;</code>
+     * <code>string responseMessage = 2;</code>
      */
-    public generated.Master.Message getMessage() {
-      return message_ == null ? generated.Master.Message.getDefaultInstance() : message_;
-    }
-    /**
-     * <code>.Message message = 2;</code>
-     */
-    public generated.Master.MessageOrBuilder getMessageOrBuilder() {
-      return getMessage();
+    public com.google.protobuf.ByteString
+        getResponseMessageBytes() {
+      java.lang.Object ref = responseMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1684,11 +6335,11 @@ public final class Master {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (keys_ != null) {
-        output.writeMessage(1, getKeys());
+      if (responseCode_ != 0) {
+        output.writeInt32(1, responseCode_);
       }
-      if (message_ != null) {
-        output.writeMessage(2, getMessage());
+      if (!getResponseMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseMessage_);
       }
       unknownFields.writeTo(output);
     }
@@ -1699,13 +6350,12 @@ public final class Master {
       if (size != -1) return size;
 
       size = 0;
-      if (keys_ != null) {
+      if (responseCode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getKeys());
+          .computeInt32Size(1, responseCode_);
       }
-      if (message_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getMessage());
+      if (!getResponseMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseMessage_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1723,16 +6373,10 @@ public final class Master {
       generated.Master.MapReduceResponse other = (generated.Master.MapReduceResponse) obj;
 
       boolean result = true;
-      result = result && (hasKeys() == other.hasKeys());
-      if (hasKeys()) {
-        result = result && getKeys()
-            .equals(other.getKeys());
-      }
-      result = result && (hasMessage() == other.hasMessage());
-      if (hasMessage()) {
-        result = result && getMessage()
-            .equals(other.getMessage());
-      }
+      result = result && (getResponseCode()
+          == other.getResponseCode());
+      result = result && getResponseMessage()
+          .equals(other.getResponseMessage());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1744,14 +6388,10 @@ public final class Master {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasKeys()) {
-        hash = (37 * hash) + KEYS_FIELD_NUMBER;
-        hash = (53 * hash) + getKeys().hashCode();
-      }
-      if (hasMessage()) {
-        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getMessage().hashCode();
-      }
+      hash = (37 * hash) + RESPONSECODE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseCode();
+      hash = (37 * hash) + RESPONSEMESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1885,18 +6525,10 @@ public final class Master {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (keysBuilder_ == null) {
-          keys_ = null;
-        } else {
-          keys_ = null;
-          keysBuilder_ = null;
-        }
-        if (messageBuilder_ == null) {
-          message_ = null;
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
+        responseCode_ = 0;
+
+        responseMessage_ = "";
+
         return this;
       }
 
@@ -1923,16 +6555,8 @@ public final class Master {
       @java.lang.Override
       public generated.Master.MapReduceResponse buildPartial() {
         generated.Master.MapReduceResponse result = new generated.Master.MapReduceResponse(this);
-        if (keysBuilder_ == null) {
-          result.keys_ = keys_;
-        } else {
-          result.keys_ = keysBuilder_.build();
-        }
-        if (messageBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = messageBuilder_.build();
-        }
+        result.responseCode_ = responseCode_;
+        result.responseMessage_ = responseMessage_;
         onBuilt();
         return result;
       }
@@ -1981,11 +6605,12 @@ public final class Master {
 
       public Builder mergeFrom(generated.Master.MapReduceResponse other) {
         if (other == generated.Master.MapReduceResponse.getDefaultInstance()) return this;
-        if (other.hasKeys()) {
-          mergeKeys(other.getKeys());
+        if (other.getResponseCode() != 0) {
+          setResponseCode(other.getResponseCode());
         }
-        if (other.hasMessage()) {
-          mergeMessage(other.getMessage());
+        if (!other.getResponseMessage().isEmpty()) {
+          responseMessage_ = other.responseMessage_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2016,238 +6641,99 @@ public final class Master {
         return this;
       }
 
-      private generated.Master.Keys keys_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          generated.Master.Keys, generated.Master.Keys.Builder, generated.Master.KeysOrBuilder> keysBuilder_;
+      private int responseCode_ ;
       /**
-       * <code>.Keys keys = 1;</code>
+       * <code>int32 responseCode = 1;</code>
        */
-      public boolean hasKeys() {
-        return keysBuilder_ != null || keys_ != null;
+      public int getResponseCode() {
+        return responseCode_;
       }
       /**
-       * <code>.Keys keys = 1;</code>
+       * <code>int32 responseCode = 1;</code>
        */
-      public generated.Master.Keys getKeys() {
-        if (keysBuilder_ == null) {
-          return keys_ == null ? generated.Master.Keys.getDefaultInstance() : keys_;
-        } else {
-          return keysBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public Builder setKeys(generated.Master.Keys value) {
-        if (keysBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          keys_ = value;
-          onChanged();
-        } else {
-          keysBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public Builder setKeys(
-          generated.Master.Keys.Builder builderForValue) {
-        if (keysBuilder_ == null) {
-          keys_ = builderForValue.build();
-          onChanged();
-        } else {
-          keysBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public Builder mergeKeys(generated.Master.Keys value) {
-        if (keysBuilder_ == null) {
-          if (keys_ != null) {
-            keys_ =
-              generated.Master.Keys.newBuilder(keys_).mergeFrom(value).buildPartial();
-          } else {
-            keys_ = value;
-          }
-          onChanged();
-        } else {
-          keysBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public Builder clearKeys() {
-        if (keysBuilder_ == null) {
-          keys_ = null;
-          onChanged();
-        } else {
-          keys_ = null;
-          keysBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public generated.Master.Keys.Builder getKeysBuilder() {
+      public Builder setResponseCode(int value) {
         
+        responseCode_ = value;
         onChanged();
-        return getKeysFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      public generated.Master.KeysOrBuilder getKeysOrBuilder() {
-        if (keysBuilder_ != null) {
-          return keysBuilder_.getMessageOrBuilder();
-        } else {
-          return keys_ == null ?
-              generated.Master.Keys.getDefaultInstance() : keys_;
-        }
-      }
-      /**
-       * <code>.Keys keys = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          generated.Master.Keys, generated.Master.Keys.Builder, generated.Master.KeysOrBuilder> 
-          getKeysFieldBuilder() {
-        if (keysBuilder_ == null) {
-          keysBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              generated.Master.Keys, generated.Master.Keys.Builder, generated.Master.KeysOrBuilder>(
-                  getKeys(),
-                  getParentForChildren(),
-                  isClean());
-          keys_ = null;
-        }
-        return keysBuilder_;
-      }
-
-      private generated.Master.Message message_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          generated.Master.Message, generated.Master.Message.Builder, generated.Master.MessageOrBuilder> messageBuilder_;
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public boolean hasMessage() {
-        return messageBuilder_ != null || message_ != null;
-      }
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public generated.Master.Message getMessage() {
-        if (messageBuilder_ == null) {
-          return message_ == null ? generated.Master.Message.getDefaultInstance() : message_;
-        } else {
-          return messageBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public Builder setMessage(generated.Master.Message value) {
-        if (messageBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          message_ = value;
-          onChanged();
-        } else {
-          messageBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>.Message message = 2;</code>
+       * <code>int32 responseCode = 1;</code>
        */
-      public Builder setMessage(
-          generated.Master.Message.Builder builderForValue) {
-        if (messageBuilder_ == null) {
-          message_ = builderForValue.build();
-          onChanged();
-        } else {
-          messageBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public Builder mergeMessage(generated.Master.Message value) {
-        if (messageBuilder_ == null) {
-          if (message_ != null) {
-            message_ =
-              generated.Master.Message.newBuilder(message_).mergeFrom(value).buildPartial();
-          } else {
-            message_ = value;
-          }
-          onChanged();
-        } else {
-          messageBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public Builder clearMessage() {
-        if (messageBuilder_ == null) {
-          message_ = null;
-          onChanged();
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Message message = 2;</code>
-       */
-      public generated.Master.Message.Builder getMessageBuilder() {
+      public Builder clearResponseCode() {
         
+        responseCode_ = 0;
         onChanged();
-        return getMessageFieldBuilder().getBuilder();
+        return this;
       }
+
+      private java.lang.Object responseMessage_ = "";
       /**
-       * <code>.Message message = 2;</code>
+       * <code>string responseMessage = 2;</code>
        */
-      public generated.Master.MessageOrBuilder getMessageOrBuilder() {
-        if (messageBuilder_ != null) {
-          return messageBuilder_.getMessageOrBuilder();
+      public java.lang.String getResponseMessage() {
+        java.lang.Object ref = responseMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseMessage_ = s;
+          return s;
         } else {
-          return message_ == null ?
-              generated.Master.Message.getDefaultInstance() : message_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.Message message = 2;</code>
+       * <code>string responseMessage = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          generated.Master.Message, generated.Master.Message.Builder, generated.Master.MessageOrBuilder> 
-          getMessageFieldBuilder() {
-        if (messageBuilder_ == null) {
-          messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              generated.Master.Message, generated.Master.Message.Builder, generated.Master.MessageOrBuilder>(
-                  getMessage(),
-                  getParentForChildren(),
-                  isClean());
-          message_ = null;
+      public com.google.protobuf.ByteString
+          getResponseMessageBytes() {
+        java.lang.Object ref = responseMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return messageBuilder_;
+      }
+      /**
+       * <code>string responseMessage = 2;</code>
+       */
+      public Builder setResponseMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseMessage = 2;</code>
+       */
+      public Builder clearResponseMessage() {
+        
+        responseMessage_ = getDefaultInstance().getResponseMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseMessage = 2;</code>
+       */
+      public Builder setResponseMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseMessage_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3318,619 +7804,46 @@ public final class Master {
 
   }
 
-  public interface MessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Message)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 responseCode = 1;</code>
-     */
-    int getResponseCode();
-
-    /**
-     * <code>string responseMessage = 2;</code>
-     */
-    java.lang.String getResponseMessage();
-    /**
-     * <code>string responseMessage = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getResponseMessageBytes();
-  }
-  /**
-   * Protobuf type {@code Message}
-   */
-  public  static final class Message extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Message)
-      MessageOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Message.newBuilder() to construct.
-    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Message() {
-      responseCode_ = 0;
-      responseMessage_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Message(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              responseCode_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              responseMessage_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return generated.Master.internal_static_Message_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return generated.Master.internal_static_Message_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              generated.Master.Message.class, generated.Master.Message.Builder.class);
-    }
-
-    public static final int RESPONSECODE_FIELD_NUMBER = 1;
-    private int responseCode_;
-    /**
-     * <code>int32 responseCode = 1;</code>
-     */
-    public int getResponseCode() {
-      return responseCode_;
-    }
-
-    public static final int RESPONSEMESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object responseMessage_;
-    /**
-     * <code>string responseMessage = 2;</code>
-     */
-    public java.lang.String getResponseMessage() {
-      java.lang.Object ref = responseMessage_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        responseMessage_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string responseMessage = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getResponseMessageBytes() {
-      java.lang.Object ref = responseMessage_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        responseMessage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (responseCode_ != 0) {
-        output.writeInt32(1, responseCode_);
-      }
-      if (!getResponseMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, responseMessage_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (responseCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, responseCode_);
-      }
-      if (!getResponseMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, responseMessage_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof generated.Master.Message)) {
-        return super.equals(obj);
-      }
-      generated.Master.Message other = (generated.Master.Message) obj;
-
-      boolean result = true;
-      result = result && (getResponseCode()
-          == other.getResponseCode());
-      result = result && getResponseMessage()
-          .equals(other.getResponseMessage());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESPONSECODE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseCode();
-      hash = (37 * hash) + RESPONSEMESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseMessage().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static generated.Master.Message parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static generated.Master.Message parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static generated.Master.Message parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static generated.Master.Message parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static generated.Master.Message parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static generated.Master.Message parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static generated.Master.Message parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static generated.Master.Message parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static generated.Master.Message parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static generated.Master.Message parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static generated.Master.Message parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static generated.Master.Message parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(generated.Master.Message prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code Message}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Message)
-        generated.Master.MessageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return generated.Master.internal_static_Message_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return generated.Master.internal_static_Message_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                generated.Master.Message.class, generated.Master.Message.Builder.class);
-      }
-
-      // Construct using generated.Master.Message.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        responseCode_ = 0;
-
-        responseMessage_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return generated.Master.internal_static_Message_descriptor;
-      }
-
-      @java.lang.Override
-      public generated.Master.Message getDefaultInstanceForType() {
-        return generated.Master.Message.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public generated.Master.Message build() {
-        generated.Master.Message result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public generated.Master.Message buildPartial() {
-        generated.Master.Message result = new generated.Master.Message(this);
-        result.responseCode_ = responseCode_;
-        result.responseMessage_ = responseMessage_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof generated.Master.Message) {
-          return mergeFrom((generated.Master.Message)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(generated.Master.Message other) {
-        if (other == generated.Master.Message.getDefaultInstance()) return this;
-        if (other.getResponseCode() != 0) {
-          setResponseCode(other.getResponseCode());
-        }
-        if (!other.getResponseMessage().isEmpty()) {
-          responseMessage_ = other.responseMessage_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        generated.Master.Message parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (generated.Master.Message) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int responseCode_ ;
-      /**
-       * <code>int32 responseCode = 1;</code>
-       */
-      public int getResponseCode() {
-        return responseCode_;
-      }
-      /**
-       * <code>int32 responseCode = 1;</code>
-       */
-      public Builder setResponseCode(int value) {
-        
-        responseCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 responseCode = 1;</code>
-       */
-      public Builder clearResponseCode() {
-        
-        responseCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object responseMessage_ = "";
-      /**
-       * <code>string responseMessage = 2;</code>
-       */
-      public java.lang.String getResponseMessage() {
-        java.lang.Object ref = responseMessage_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          responseMessage_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string responseMessage = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getResponseMessageBytes() {
-        java.lang.Object ref = responseMessage_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          responseMessage_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string responseMessage = 2;</code>
-       */
-      public Builder setResponseMessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        responseMessage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string responseMessage = 2;</code>
-       */
-      public Builder clearResponseMessage() {
-        
-        responseMessage_ = getDefaultInstance().getResponseMessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string responseMessage = 2;</code>
-       */
-      public Builder setResponseMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        responseMessage_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:Message)
-    }
-
-    // @@protoc_insertion_point(class_scope:Message)
-    private static final generated.Master.Message DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new generated.Master.Message();
-    }
-
-    public static generated.Master.Message getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Message>
-        PARSER = new com.google.protobuf.AbstractParser<Message>() {
-      @java.lang.Override
-      public Message parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Message(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Message> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Message> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public generated.Master.Message getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetMapperStatusRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetMapperStatusRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetMapperStatusResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetMapperStatusResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetMapperStatusRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SetMapperStatusRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetMapperStatusResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SetMapperStatusResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetReducerStatusRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetReducerStatusRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetReducerStatusResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetReducerStatusResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetReducerStatusRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SetReducerStatusRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetReducerStatusResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SetReducerStatusResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MapReduceInputParams_descriptor;
   private static final 
@@ -3951,11 +7864,6 @@ public final class Master {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Empty_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Message_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Message_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3965,20 +7873,37 @@ public final class Master {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014master.proto\"\370\001\n\024MapReduceInputParams\022" +
-      "\023\n\013mapperCount\030\001 \001(\005\022\024\n\014reducerCount\030\002 \001" +
-      "(\005\022\027\n\017masterIPAddress\030\003 \001(\t\022\022\n\nmasterPor" +
-      "t\030\004 \001(\005\022\030\n\020kVStoreIPAddress\030\005 \001(\t\022\023\n\013kvs" +
-      "torePort\030\006 \001(\005\022\024\n\014fileLocation\030\007 \001(\t\022\027\n\017" +
-      "reducerFunction\030\010 \001(\t\022\026\n\016mapperFunction\030" +
-      "\t \001(\t\022\022\n\noutputFile\030\n \001(\t\"C\n\021MapReduceRe" +
-      "sponse\022\023\n\004keys\030\001 \001(\0132\005.Keys\022\031\n\007message\030\002" +
-      " \001(\0132\010.Message\"\023\n\004Keys\022\013\n\003key\030\001 \003(\t\"\007\n\005E" +
-      "mpty\"8\n\007Message\022\024\n\014responseCode\030\001 \001(\005\022\027\n" +
-      "\017responseMessage\030\002 \001(\t2O\n\025StartMapReduce" +
-      "Service\0226\n\tmapReduce\022\025.MapReduceInputPar" +
-      "ams\032\022.MapReduceResponseB\013\n\tgeneratedb\006pr" +
-      "oto3"
+      "\n\014master.proto\",\n\026GetMapperStatusRequest" +
+      "\022\022\n\nmapperName\030\001 \001(\t\"/\n\027GetMapperStatusR" +
+      "esponse\022\024\n\014mapperStatus\030\001 \001(\t\"B\n\026SetMapp" +
+      "erStatusRequest\022\022\n\nmapperName\030\001 \001(\t\022\024\n\014m" +
+      "apperStatus\030\002 \001(\t\"/\n\027SetMapperStatusResp" +
+      "onse\022\024\n\014mapperStatus\030\001 \001(\t\".\n\027GetReducer" +
+      "StatusRequest\022\023\n\013reducerName\030\001 \001(\t\"1\n\030Ge" +
+      "tReducerStatusResponse\022\025\n\rreducerStatus\030" +
+      "\001 \001(\t\"E\n\027SetReducerStatusRequest\022\023\n\013redu" +
+      "cerName\030\001 \001(\t\022\025\n\rreducerStatus\030\002 \001(\t\"1\n\030" +
+      "SetReducerStatusResponse\022\025\n\rreducerStatu" +
+      "s\030\001 \001(\t\"\370\001\n\024MapReduceInputParams\022\023\n\013mapp" +
+      "erCount\030\001 \001(\005\022\024\n\014reducerCount\030\002 \001(\005\022\027\n\017m" +
+      "asterIPAddress\030\003 \001(\t\022\022\n\nmasterPort\030\004 \001(\005" +
+      "\022\030\n\020kVStoreIPAddress\030\005 \001(\t\022\023\n\013kvstorePor" +
+      "t\030\006 \001(\005\022\024\n\014fileLocation\030\007 \001(\t\022\027\n\017reducer" +
+      "Function\030\010 \001(\t\022\026\n\016mapperFunction\030\t \001(\t\022\022" +
+      "\n\noutputFile\030\n \001(\t\"B\n\021MapReduceResponse\022" +
+      "\024\n\014responseCode\030\001 \001(\005\022\027\n\017responseMessage" +
+      "\030\002 \001(\t\"\023\n\004Keys\022\013\n\003key\030\001 \003(\t\"\007\n\005Empty2O\n\025" +
+      "StartMapReduceService\0226\n\tmapReduce\022\025.Map" +
+      "ReduceInputParams\032\022.MapReduceResponse2\241\001" +
+      "\n\023MapperStatusService\022D\n\017getMapperStatus" +
+      "\022\027.GetMapperStatusRequest\032\030.GetMapperSta" +
+      "tusResponse\022D\n\017setMapperStatus\022\027.SetMapp" +
+      "erStatusRequest\032\030.SetMapperStatusRespons" +
+      "e2\250\001\n\024ReducerStatusService\022G\n\020getReducer" +
+      "Status\022\030.GetReducerStatusRequest\032\031.GetRe" +
+      "ducerStatusResponse\022G\n\020setReducerStatus\022" +
+      "\030.SetReducerStatusRequest\032\031.SetReducerSt" +
+      "atusResponseB\013\n\tgeneratedb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3992,36 +7917,78 @@ public final class Master {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_MapReduceInputParams_descriptor =
+    internal_static_GetMapperStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_GetMapperStatusRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetMapperStatusRequest_descriptor,
+        new java.lang.String[] { "MapperName", });
+    internal_static_GetMapperStatusResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_GetMapperStatusResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetMapperStatusResponse_descriptor,
+        new java.lang.String[] { "MapperStatus", });
+    internal_static_SetMapperStatusRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_SetMapperStatusRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SetMapperStatusRequest_descriptor,
+        new java.lang.String[] { "MapperName", "MapperStatus", });
+    internal_static_SetMapperStatusResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_SetMapperStatusResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SetMapperStatusResponse_descriptor,
+        new java.lang.String[] { "MapperStatus", });
+    internal_static_GetReducerStatusRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_GetReducerStatusRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetReducerStatusRequest_descriptor,
+        new java.lang.String[] { "ReducerName", });
+    internal_static_GetReducerStatusResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_GetReducerStatusResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetReducerStatusResponse_descriptor,
+        new java.lang.String[] { "ReducerStatus", });
+    internal_static_SetReducerStatusRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_SetReducerStatusRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SetReducerStatusRequest_descriptor,
+        new java.lang.String[] { "ReducerName", "ReducerStatus", });
+    internal_static_SetReducerStatusResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_SetReducerStatusResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SetReducerStatusResponse_descriptor,
+        new java.lang.String[] { "ReducerStatus", });
+    internal_static_MapReduceInputParams_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_MapReduceInputParams_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MapReduceInputParams_descriptor,
         new java.lang.String[] { "MapperCount", "ReducerCount", "MasterIPAddress", "MasterPort", "KVStoreIPAddress", "KvstorePort", "FileLocation", "ReducerFunction", "MapperFunction", "OutputFile", });
     internal_static_MapReduceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_MapReduceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MapReduceResponse_descriptor,
-        new java.lang.String[] { "Keys", "Message", });
+        new java.lang.String[] { "ResponseCode", "ResponseMessage", });
     internal_static_Keys_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_Keys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Keys_descriptor,
         new java.lang.String[] { "Key", });
     internal_static_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_Message_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_Message_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Message_descriptor,
-        new java.lang.String[] { "ResponseCode", "ResponseMessage", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
